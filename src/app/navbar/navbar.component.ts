@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from 'ng2-translate';
 
 @Component({
   selector: 'navbar',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
 })
 
 export class NavbarComponent {
+
+  constructor(
+    private translateService: TranslateService
+  ) {}
+
+  onTranslate(lang: string): void {
+    this.translateService.use(lang);
+  }
 }

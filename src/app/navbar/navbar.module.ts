@@ -4,10 +4,12 @@ import { NavbarComponent } from './navbar.component';
 import { routing } from '../app.routing';
 import { SidebarComponent } from './sidebar.component';
 import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     imports: [
       CommonModule,
+      SharedModule,
       routing
     ],
     exports: [ NavbarComponent, SidebarComponent ],

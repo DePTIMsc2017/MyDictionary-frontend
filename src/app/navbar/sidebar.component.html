@@ -6,19 +6,19 @@
     <li class="nav-item">
       <a class="nav-link" href="#">
         <span class="fa fa-book"></span>
-        <span *ngIf="_showIt">Saját szógyűjtemény</span>
+        <span *ngIf="_showIt">{{ 'sidebar.my_words' | translate }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">
         <span class="fa fa-pencil"></span>
-        <span *ngIf="_showIt">Gyakorló feladatok</span>
+        <span *ngIf="_showIt">{{ 'sidebar.exec_lesson' | translate }}</span>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">
         <span class="fa fa-file-excel-o"></span>
-        <span *ngIf="_showIt">Exportálás</span>
+        <span *ngIf="_showIt">{{ 'sidebar.export' | translate }}</span>
       </a>
     </li>
   </ul>
