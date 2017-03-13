@@ -36,3 +36,13 @@
   border-radius: 0;
 }
 
+@media (max-width: 767px) {
+  .sidebar {
+    width: 44px;
+  }
+
+  .show-it {
+    width: 100%;
+  }
+}
+

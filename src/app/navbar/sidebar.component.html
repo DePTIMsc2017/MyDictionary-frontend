@@ -1,13 +1,25 @@
-<nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+<nav class="col-sm-3 col-md-2 bg-faded navbar-toggleable-sm sidebar" [class.show-it]="_showIt">
+  <button class="navbar-toggler justify-content-center" type="button" (click)="onShow()">
+    <span class="fa fa-bars"></span>
+  </button>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
-      <a class="nav-link" href="#">Saját szógyűjtemény</a>
+      <a class="nav-link" href="#">
+        <span class="fa fa-book"></span>
+        <span *ngIf="_showIt">Saját szógyűjtemény</span>
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Gyakorló feladatok</a>
+      <a class="nav-link" href="#">
+        <span class="fa fa-pencil"></span>
+        <span *ngIf="_showIt">Gyakorló feladatok</span>
+      </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Exportálás</a>
+      <a class="nav-link" href="#">
+        <span class="fa fa-file-excel-o"></span>
+        <span *ngIf="_showIt">Exportálás</span>
+      </a>
     </li>
   </ul>
 </nav>
