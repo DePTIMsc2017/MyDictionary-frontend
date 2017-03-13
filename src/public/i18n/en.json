@@ -1,6 +1,7 @@
 {
   "general": {
-    "welcome": "My Dictionary app is ready to translate!"
+    "welcome": "My Dictionary app is ready to translate!",
+    "working": "It's working."
   },
   "navbar": {
     "user_profile": "User Profile",

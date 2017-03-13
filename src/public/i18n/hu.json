@@ -1,6 +1,7 @@
 {
   "general": {
-    "welcome": "My Dictionary webapplikáció készen áll a fordításra!"
+    "welcome": "My Dictionary webapplikáció készen áll a fordításra!",
+    "working": "Működik!"
   },
   "navbar": {
     "user_profile": "Profil",
