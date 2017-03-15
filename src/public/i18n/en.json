@@ -1,0 +1,16 @@
+{
+  "general": {
+    "welcome": "My Dictionary app is ready to translate!",
+    "working": "It's working."
+  },
+  "navbar": {
+    "user_profile": "User Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "sidebar": {
+    "my_words": "My words",
+    "exec_lesson": "Exercise lessons",
+    "export": "Export"
+  }
+}

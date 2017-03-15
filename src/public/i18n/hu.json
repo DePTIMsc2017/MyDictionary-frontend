@@ -1,0 +1,16 @@
+{
+  "general": {
+    "welcome": "My Dictionary webapplikáció készen áll a fordításra!",
+    "working": "Működik!"
+  },
+  "navbar": {
+    "user_profile": "Profil",
+    "settings": "Beállítások",
+    "logout": "Kijelentkezés"
+  },
+  "sidebar": {
+    "my_words": "Saját szógyűjtemény",
+    "exec_lesson": "Gyakorló feladatok",
+    "export": "Exportálás"
+  }
+}
