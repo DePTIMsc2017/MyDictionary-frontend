@@ -6,7 +6,8 @@
   "navbar": {
     "user_profile": "Profil",
     "settings": "Beállítások",
-    "logout": "Kijelentkezés"
+    "logout": "Kijelentkezés",
+    "about": "Súgó"
   },
   "sidebar": {
     "my_words": "Saját szógyűjtemény",
