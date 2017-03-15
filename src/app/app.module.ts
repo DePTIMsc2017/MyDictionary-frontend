@@ -10,6 +10,7 @@ import { routing } from './app.routing';
 import { HomeModule } from './home/home.module';
 import { TranslateModule, TranslateLoader } from 'ng2-translate';
 import { createTranslateLoader } from './shared/utils';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { createTranslateLoader } from './shared/utils';
   ],
   imports: [
     HomeModule,
+    LoginModule,
     NavbarModule,
     BrowserModule,
     FormsModule,

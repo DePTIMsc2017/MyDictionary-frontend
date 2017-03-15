@@ -14,7 +14,10 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/about"><i class="fa fa-question fa-fw"></i> {{ 'navbar.about' | translate }}</a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
+        <a class="nav-link" routerLink="/login"><i class="fa fa-sign-in fa-fw"></i> {{ 'navbar.login' | translate }}</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="loginService.isLoggedIn()">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-user fa-fw"></i>

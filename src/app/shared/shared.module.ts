@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { TranslateModule } from 'ng2-translate';
+import { LoginService } from './login/login.service';
 
 
 @NgModule({
@@ -10,6 +11,8 @@ import { TranslateModule } from 'ng2-translate';
       TranslateModule
     ],
     declarations: [],
-    providers: [],
+    providers: [
+      LoginService
+    ],
 })
 export class SharedModule { }

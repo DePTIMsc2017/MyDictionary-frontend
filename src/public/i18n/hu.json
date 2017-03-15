@@ -6,6 +6,7 @@
   "navbar": {
     "user_profile": "Profil",
     "settings": "Beállítások",
+    "login": "Bejelentkezés",
     "logout": "Kijelentkezés",
     "about": "Súgó"
   },
