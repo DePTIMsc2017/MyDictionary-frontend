@@ -6,7 +6,9 @@
   "navbar": {
     "user_profile": "User Profile",
     "settings": "Settings",
-    "logout": "Logout"
+    "login": "Login",
+    "logout": "Logout",
+    "about": "About"
   },
   "sidebar": {
     "my_words": "My words",

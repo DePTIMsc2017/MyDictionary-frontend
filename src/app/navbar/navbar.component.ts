@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
+import { LoginService } from '../shared/login/login.service';
 
 @Component({
   selector: 'navbar',
@@ -9,6 +10,7 @@ import { TranslateService } from 'ng2-translate';
 export class NavbarComponent {
 
   constructor(
+    private loginService: LoginService,
     private translateService: TranslateService
   ) {}
 
