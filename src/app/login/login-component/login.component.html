@@ -8,15 +8,17 @@
         <input type="email" name="loginEmail" class="form-control" id="inputEmail" placeholder="E-mail cím" required autofocus ngModel>
         <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó" required ngModel>
         <font size="3"><a href="#">Elfelejtett Jelszó</a> </font>
-    </div>    
+    </div>
     </div>
     <div class="row">
     <div class="form-group col-10 noPadding">
         <button type="submit" class="btn form-control btn-primary loginButtonMargin">Bejelentkezés</button>
     </div>
     <div class="form-group col-10">
-        <button type="button" class="btn form-control btn-secondary loginButtonMargin">Regisztráció</button>
-    </div>    
+        <button type="button" class="btn form-control btn-secondary loginButtonMargin" (click)="onRegister()">
+          Regisztráció
+        </button>
+    </div>
     </div>
   </form>
 </div>
