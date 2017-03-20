@@ -8,7 +8,7 @@
         <input type="email" name="loginEmail" class="form-control" id="inputEmail"
                             placeholder="E-mail cím" required autofocus ngModel (blur)="_onFail = false">
         <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó"
-                            required ngModel (blur)="_onFail = false; failExpression = 'no_fail'">
+                            required ngModel (blur)="failExpression = 'no_fail'">
         <font size="3"><a href="#">Elfelejtett Jelszó</a> </font>
       </div>
     </div>

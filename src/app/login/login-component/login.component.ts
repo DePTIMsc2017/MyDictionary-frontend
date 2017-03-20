@@ -16,7 +16,6 @@ import { Router } from '@angular/router';
   )]
 })
 export class LoginComponent implements OnInit {
-  private _onFail: boolean = false;
   private failExpression: string = 'no_fail';
 
   constructor(
@@ -30,7 +29,6 @@ export class LoginComponent implements OnInit {
     if (this.loginService.login(user)) {
       this.router.navigate(['/']);
     } else {
-      this._onFail = true;
       this.failExpression = 'has_fail';
     }
   }
