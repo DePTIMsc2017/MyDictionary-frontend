@@ -6,7 +6,7 @@
     <div class="row">
       <div class="form-group col-12">
         <input type="email" name="loginEmail" class="form-control" id="inputEmail"
-                            placeholder="E-mail cím" required autofocus ngModel (blur)="_onFail = false">
+                            placeholder="E-mail cím" required autofocus ngModel (blur)="failExpression = 'no_fail'">
         <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó"
                             required ngModel (blur)="failExpression = 'no_fail'">
         <font size="3"><a href="#">Elfelejtett Jelszó</a> </font>
