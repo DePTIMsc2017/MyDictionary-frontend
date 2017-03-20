@@ -16,7 +16,7 @@ export class LoginService implements LoginInterface {
   login(user: LoginModel): string {
     this.loggedin = true;
     this.router.navigate(['/']);
-    return undefined;
+    return "success";
   }
 
   logout(): string {
