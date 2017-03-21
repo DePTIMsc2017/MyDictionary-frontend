@@ -1,1 +1,16 @@
 /* TODO About html-hez css classok létrehozása */
+
+.div_other{
+  margin-bottom: 15px;
+}
+
+
+
+.div_first{
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.fontsize{
+  font-size: x-large;
+}
