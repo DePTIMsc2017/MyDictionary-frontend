@@ -1,5 +1,27 @@
 <!-- TODO Login oldal kialakítása -->
-<h1>{{ 'navbar.login' | translate }}</h1>
+
+<div class="loginTopCenter">
+  <form #loginFor="ngForm" (ngSubmit)="login()">
+    <h2>{{ 'navbar.login' | translate }}</h2>
+    <div class="row">
+    <div class="form-group col-10">
+        <input type="email" name="loginEmail" class="form-control" id="inputEmail" placeholder="E-mail cím" required autofocus ngModel>
+        <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó" required ngModel>
+        <font size="3"><a href="#">Elfelejtett Jelszó</a> </font>
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group col-10 noPadding">
+        <button type="submit" class="btn form-control btn-primary loginButtonMargin">Bejelentkezés</button>
+    </div>
+    <div class="form-group col-10">
+        <button type="button" class="btn form-control btn-secondary loginButtonMargin" (click)="onRegister()">
+          Regisztráció
+        </button>
+    </div>
+    </div>
+  </form>
+</div>
 
 <!-- Mocking -->
-<button (click)="loginService.login()">{{ 'navbar.login' | translate }}</button>
+<!--<button (click)="loginService.login()">{{ 'navbar.login' | translate }}</button>-->

@@ -1,1 +1,16 @@
 /* TODO Login html-hez css classok létrehozása. */
+
+
+.loginTopCenter {
+  position: fixed;
+  left: 42%;
+  top: 15%;
+}
+
+.noPadding {
+    margin-bottom: 0px;
+}
+
+.loginButtonMargin {    
+    margin: 0px;
+}
