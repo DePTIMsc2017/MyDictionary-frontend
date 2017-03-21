@@ -3,6 +3,9 @@
     "welcome": "My Dictionary webapplikáció készen áll a fordításra!",
     "working": "Működik!"
   },
+  "login": {
+    "wrong_pass_or_user": "Hibás felhasználónév/jelszó!"
+  },
   "navbar": {
     "user_profile": "Profil",
     "settings": "Beállítások",
