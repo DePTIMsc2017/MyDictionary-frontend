@@ -2,9 +2,9 @@
 <div [ngClass]="loginService.isLoggedIn() ? 'container-fluid' : 'container'" class="myd-padding">
   <div class="row">
     <sidebar (showItEvent)="_showIt = $event" *ngIf="loginService.isLoggedIn()"></sidebar>
-    <main [ngClass]="loginService.isLoggedIn() ? _showIt ? 'col-9 offset-3 col-md-10 offset-md-2'
+    <div [ngClass]="loginService.isLoggedIn() ? _showIt ? 'col-9 offset-3 col-md-10 offset-md-2'
                                                          : 'col-11 offset-1 col-md-10 offset-md-2' : ''">
       <router-outlet></router-outlet>
-    </main>
+    </div>
   </div>
 </div>
