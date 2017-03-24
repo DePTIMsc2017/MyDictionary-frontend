@@ -3,6 +3,9 @@
     "welcome": "My Dictionary app is ready to translate!",
     "working": "It's working."
   },
+  "login": {
+    "wrong_pass_or_user": "Wrong User/Pass!"
+  },
   "navbar": {
     "user_profile": "User Profile",
     "settings": "Settings",
@@ -14,5 +17,8 @@
     "my_words": "My words",
     "exec_lesson": "Exercise lessons",
     "export": "Export"
+  },
+  "users": {
+    "welcome": "User Profile"
   }
 }

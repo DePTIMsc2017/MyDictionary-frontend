@@ -17,9 +17,9 @@ export class AppComponent implements OnInit {
     this.translateService.addLangs(['en', 'hu']);
     this.translateService.setDefaultLang('hu');
     this.translateService.onLangChange
-      .subscribe(e => localStorage.setItem('mm-lang', e.lang));
+      .subscribe(e => localStorage.setItem('md-lang', e.lang));
 
-    const lang = localStorage.getItem('mm-lang');
+    const lang = localStorage.getItem('md-lang');
     this.translateService.use(lang ? lang : 'hu');
   }
 

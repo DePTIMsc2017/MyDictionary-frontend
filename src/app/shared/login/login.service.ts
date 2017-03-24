@@ -1,35 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { LoginInterface } from './login.interface';
 import { LoginModel } from '../models/login.model';
+import { usersMock } from '../mock/users.mock';
+
 
 @Injectable()
 export class LoginService implements LoginInterface {
-  // MOCK
-  loggedin: boolean = false;
+  private _token: String = null;
 
   constructor(
-    private router: Router
-  ) {}
-
-  login(user: LoginModel): string {
-    this.loggedin = true;
-    this.router.navigate(['/']);
-    return "success";
+  ) {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this._token = currentUser && currentUser.token;
   }
 
-  logout(): string {
-    this.loggedin = false;
-    return undefined;
+  login(user: LoginModel): boolean {
+    let userExists = usersMock.filter(data => {
+      return data.email === user.loginEmail;
+    });
+    if (userExists.length != 1) {
+      return false;
+    } else {
+      if(userExists[0].password === user.loginPasswd) {
+        this._token = 'ABCDEFGHIJKLMNOPK';
+        localStorage.setItem('currentUser', JSON.stringify({username: userExists[0].username, token: this._token}));
+        return true;
+      } else {
+        return false;
+      }
+    }
   }
 
-  checkUserExist(username: string): boolean {
-    return undefined;
+  logout(): boolean {
+    this._token = null;
+    localStorage.removeItem('currentUser');
+    return true;
   }
 
   isLoggedIn(): boolean {
-    return this.loggedin;
+    return this._token !== null;
   }
 
 }

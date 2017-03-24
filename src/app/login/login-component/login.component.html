@@ -1,25 +1,34 @@
 <!-- TODO Login oldal kialakítása -->
 
 <div class="loginTopCenter">
-  <form #loginFor="ngForm" (ngSubmit)="login()">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm.form.value)">
     <h2>{{ 'navbar.login' | translate }}</h2>
     <div class="row">
-    <div class="form-group col-10">
-        <input type="email" name="loginEmail" class="form-control" id="inputEmail" placeholder="E-mail cím" required autofocus ngModel>
-        <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó" required ngModel>
+      <div class="form-group col-12">
+        <input type="email" name="loginEmail" class="form-control" id="inputEmail"
+                            placeholder="E-mail cím" required autofocus ngModel (blur)="failExpression = 'no_fail'">
+        <input type="password" name="loginPasswd" class="form-control" id="inputPassword" placeholder="Jelszó"
+                            required ngModel (blur)="failExpression = 'no_fail'">
         <font size="3"><a href="#">Elfelejtett Jelszó</a> </font>
-    </div>    
+      </div>
     </div>
     <div class="row">
-    <div class="form-group col-10 noPadding">
+      <div class="form-group col-12 noPadding">
         <button type="submit" class="btn form-control btn-primary loginButtonMargin">Bejelentkezés</button>
+      </div>
+      <div class="form-group col-12">
+        <button type="button" class="btn form-control btn-secondary loginButtonMargin" (click)="onRegister()">
+          Regisztráció
+        </button>
+      </div>
     </div>
-    <div class="form-group col-10">
-        <button type="button" class="btn form-control btn-secondary loginButtonMargin">Regisztráció</button>
-    </div>    
+    <div class="row">
+      <div class="form-group col-12">
+        <div class="alert alert-danger" [@onfail]="failExpression">
+          {{ 'login.wrong_pass_or_user' | translate }}
+        </div>
+      </div>
     </div>
   </form>
 </div>
 
-<!-- Mocking -->
-<!--<button (click)="loginService.login()">{{ 'navbar.login' | translate }}</button>-->
