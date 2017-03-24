@@ -12,6 +12,7 @@ import { TranslateModule, TranslateLoader } from 'ng2-translate';
 import { createTranslateLoader } from './shared/utils';
 import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
+import { WordsModule } from './words/words.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { UsersModule } from './users/users.module';
     NavbarModule,
     BrowserModule,
     FormsModule,
+    WordsModule,
     HttpModule,
     UsersModule,
     TranslateModule.forRoot({

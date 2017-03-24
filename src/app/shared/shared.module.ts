@@ -3,6 +3,7 @@ import { TranslateModule } from 'ng2-translate';
 import { LoginService } from './login/login.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RegistrationService } from './registration/registration.service';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     ],
     declarations: [],
     providers: [
-      LoginService
+      LoginService,
+      RegistrationService
     ],
 })
 export class SharedModule { }
