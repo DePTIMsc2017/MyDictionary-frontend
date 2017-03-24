@@ -11,6 +11,7 @@ import { HomeModule } from './home/home.module';
 import { TranslateModule, TranslateLoader } from 'ng2-translate';
 import { createTranslateLoader } from './shared/utils';
 import { LoginModule } from './login/login.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { LoginModule } from './login/login.module';
     BrowserModule,
     FormsModule,
     HttpModule,
+    UsersModule,
     TranslateModule.forRoot({
       provide: TranslateLoader,
       useFactory: (createTranslateLoader),

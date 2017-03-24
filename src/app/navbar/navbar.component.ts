@@ -16,6 +16,7 @@ export class NavbarComponent {
   ) {}
 
   onTranslate(lang: string): void {
+    localStorage.setItem('md-lang', lang);
     this.translateService.use(lang);
   }
 }

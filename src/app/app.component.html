@@ -1,4 +1,4 @@
-<navbar ></navbar>
+<navbar></navbar>
 <div [ngClass]="loginService.isLoggedIn() ? 'container-fluid' : 'container'" class="myd-padding">
   <div class="row">
     <sidebar (showItEvent)="_showIt = $event" *ngIf="loginService.isLoggedIn()"></sidebar>

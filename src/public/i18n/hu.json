@@ -17,5 +17,8 @@
     "my_words": "Saját szógyűjtemény",
     "exec_lesson": "Gyakorló feladatok",
     "export": "Exportálás"
+  },
+  "users": {
+    "welcome": "Felhasználói profil"
   }
 }
