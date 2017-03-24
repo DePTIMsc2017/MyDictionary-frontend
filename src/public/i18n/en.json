@@ -17,5 +17,8 @@
     "my_words": "My words",
     "exec_lesson": "Exercise lessons",
     "export": "Export"
+  },
+  "users": {
+    "welcome": "User Profile"
   }
 }
