@@ -4,6 +4,7 @@ import { LoginService } from './login/login.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegistrationService } from './registration/registration.service';
+import { WordsService } from './words/words.service';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RegistrationService } from './registration/registration.service';
     declarations: [],
     providers: [
       LoginService,
-      RegistrationService
+      RegistrationService,
+      WordsService
     ],
 })
 export class SharedModule { }
