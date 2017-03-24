@@ -2,18 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { LoginInterface } from './login.interface';
 import { LoginModel } from '../models/login.model';
+import { usersMock } from '../mock/users.mock';
 
-// MOCK
-let usersMock = [
-  {
-    username: 'teszt@teszt.hu',
-    password: 'teszt'
-  },
-  {
-    username: 'admin@admin.hu',
-    password: 'admin'
-  }
-];
 
 @Injectable()
 export class LoginService implements LoginInterface {
@@ -27,14 +17,14 @@ export class LoginService implements LoginInterface {
 
   login(user: LoginModel): boolean {
     let userExists = usersMock.filter(data => {
-      return data.username === user.loginEmail;
+      return data.email === user.loginEmail;
     });
     if (userExists.length != 1) {
       return false;
     } else {
       if(userExists[0].password === user.loginPasswd) {
         this._token = 'ABCDEFGHIJKLMNOPK';
-        localStorage.setItem('currentUser', JSON.stringify({username: user.loginEmail, token: this._token}));
+        localStorage.setItem('currentUser', JSON.stringify({username: userExists[0].username, token: this._token}));
         return true;
       } else {
         return false;
