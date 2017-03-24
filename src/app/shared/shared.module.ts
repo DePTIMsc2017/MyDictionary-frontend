@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RegistrationService } from './registration/registration.service';
 import { WordsService } from './words/words.service';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { WordsService } from './words/words.service';
     ],
     declarations: [],
     providers: [
+      AuthGuardService,
       LoginService,
       RegistrationService,
       WordsService

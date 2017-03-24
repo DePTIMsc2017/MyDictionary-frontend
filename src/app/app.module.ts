@@ -13,6 +13,7 @@ import { createTranslateLoader } from './shared/utils';
 import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
 import { WordsModule } from './words/words.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [

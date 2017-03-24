@@ -10,7 +10,9 @@ import { routing } from './users.routing';
       routing
     ],
     exports: [],
-    declarations: [UserProfileComponent],
+    declarations: [
+      UserProfileComponent
+    ],
     providers: [],
 })
 export class UsersModule { }
