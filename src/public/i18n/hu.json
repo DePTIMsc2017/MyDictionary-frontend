@@ -11,7 +11,19 @@
     "settings": "Beállítások",
     "login": "Bejelentkezés",
     "logout": "Kijelentkezés",
-    "about": "Súgó"
+    "about": "Súgó",
+    "register":"Regisztráció"
+  },
+  "register": {
+    "username": "Felhasználónév",
+    "email":"Email cím",
+    "pswd":"Jelszó",
+    "pswd2":"Jelszó ismét",
+    "birthdate":"Születési dátum",
+    "country":"Ország",
+    "city":"Város",
+    "accept":"Elfogadom a feltételeket",
+    "star":"-gal jelölt mezők kitöltése kötelező"
   },
   "sidebar": {
     "my_words": "Saját szógyűjtemény",
