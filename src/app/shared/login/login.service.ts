@@ -4,7 +4,6 @@ import { LoginInterface } from './login.interface';
 import { LoginModel } from '../models/login.model';
 import { usersMock } from '../mock/users.mock';
 
-
 @Injectable()
 export class LoginService implements LoginInterface {
   private _token: String = null;

@@ -4,10 +4,10 @@ import { AuthGuardService } from '../shared/guards/auth-guard.service';
 
 const routes: Routes = [
   {
-    path: 'profile',
+    path: 'userprofile',
     component: UserProfileComponent,
     canActivate: [AuthGuardService]
   }
 ];
 
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forChild(routes);

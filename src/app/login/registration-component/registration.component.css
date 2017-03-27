@@ -1,1 +1,19 @@
 /* TODO regisztrációs css ide */
+
+.registrationTopCenter {
+  position: fixed;
+  left: 42%;
+  top: 15%;
+}
+
+.margin{
+  margin-bottom: 10px;
+}
+
+.margin-header{
+  margin-bottom: 25px;
+}
+
+.span-needed{
+  color: red;
+}

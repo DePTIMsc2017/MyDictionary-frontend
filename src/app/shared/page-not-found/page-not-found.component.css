@@ -1,0 +1,10 @@
+h1.error {
+    margin-top: 1em;
+    font-size: 7em;
+    font-weight: 500;
+}
+.PNFTopCenter {
+  position: fixed;
+  left: 33%;
+  top: 5%;
+}

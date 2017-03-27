@@ -11,7 +11,19 @@
     "settings": "Settings",
     "login": "Login",
     "logout": "Logout",
-    "about": "About"
+    "about": "About",
+    "register":"Registration"
+  },
+  "register": {
+    "username": "Username",
+    "email":"Email address",
+    "pswd":"Password",
+    "pswd2":"Confirm your password",
+    "birthdate":"Birth date",
+    "country":"Country",
+    "city":"City",
+    "accept":"I agree to terms and conditions ",
+    "star":"Fields marked with a star are compulsory."
   },
   "sidebar": {
     "my_words": "My words",
