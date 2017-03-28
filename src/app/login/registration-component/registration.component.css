@@ -1,14 +1,5 @@
-/* TODO regisztrációs css ide */
-
-.registrationTopCenter {
-}
-
-.margin{
-  margin-bottom: 10px;
-}
-
-.margin-header{
-  margin-bottom: 25px;
+.row {
+  margin-bottom: 1em;
 }
 
 .span-needed{
