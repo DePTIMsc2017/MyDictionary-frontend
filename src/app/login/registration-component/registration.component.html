@@ -19,7 +19,7 @@
   </div>
 
   <div class="row">
-    <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4" [class.has-danger]="_passErr">
       <label for="inputPassword">{{ 'register.pswd' | translate }}:<span class="span-needed">*</span></label>
       <input type="password" name="loginPasswd" class="form-control margin" id="inputPassword"
              required ngModel (blur)="confirm(registerForm.form.value.loginPasswd, registerForm.form.value.nickName)">
@@ -27,7 +27,7 @@
   </div>
 
   <div class="row">
-    <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4" [class.has-danger]="_passErr">
       <label for="inputPassword2">{{ 'register.pswd2' | translate }}<span class="span-needed">*</span></label>
       <input type="password" name="loginPasswd2" class="form-control margin" id="inputPassword2"
              required ngModel (blur)="pswequal(registerForm.form.value.loginPasswd, registerForm.form.value.loginPasswd2)">
@@ -63,6 +63,14 @@
     </div>
   </div>
 
+  <div [@onfail]="_failExpression">
+    <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+      <div class="alert alert-danger">
+        {{ _errorMessage | translate }}
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label>(<span class="span-needed">*</span>{{ 'register.star' | translate }})</label>
@@ -74,5 +82,4 @@
       <button type="submit" class="btn form-control btn-primary">{{ 'navbar.register' | translate }}</button>
     </div>
   </div>
-
 </form>
