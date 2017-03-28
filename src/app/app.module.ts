@@ -5,7 +5,6 @@ import { HttpModule, Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
-import { routing } from './app.routing';
 
 import { HomeModule } from './home/home.module';
 import { TranslateModule, TranslateLoader } from 'ng2-translate';
@@ -13,8 +12,9 @@ import { createTranslateLoader } from './shared/utils';
 import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
 import { WordsModule } from './words/words.module';
-import { SharedModule } from './shared/shared.module';
 
+import { routing } from './app.routing';
+import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -33,7 +33,8 @@ import { SharedModule } from './shared/shared.module';
       useFactory: (createTranslateLoader),
       deps: [Http]
     }),
-    routing
+    routing,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
