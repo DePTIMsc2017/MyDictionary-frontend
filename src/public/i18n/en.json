@@ -32,5 +32,9 @@
   },
   "users": {
     "welcome": "User Profile"
+  },
+  "words": {
+    "welcome": "Word found",
+    "notfound": "Word not found"
   }
 }

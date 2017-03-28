@@ -32,5 +32,9 @@
   },
   "users": {
     "welcome": "Felhasználói profil"
+  },
+  "words": {
+    "welcome": "Keresett szó megtalálható!",
+    "notfound": "Keresett szó nem található!"
   }
 }
