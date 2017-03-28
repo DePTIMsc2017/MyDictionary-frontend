@@ -1,3 +1,14 @@
-.myd-padding {
-  margin-top: 85px;
+.base-padding {
+  padding: 1em;
+  margin-top: 76px;
+}
+
+.sidebar-container {
+  margin-left: 250px;
+}
+
+@media only screen and (max-width : 767px) {
+  .sidebar-container {
+    margin-left: 44px;
+  }
 }

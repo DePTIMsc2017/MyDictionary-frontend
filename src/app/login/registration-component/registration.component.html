@@ -1,17 +1,17 @@
 <!-- TODO Regisztrációs template ide. -->
-
-
-<div class="registrationTopCenter">
+<div class="row">
   <form #registerForm="ngForm" (ngSubmit)="register()">
-    <div class="form-group col-12 ">
+
+    <div class="form-group col-xl-4 offset-xl-4">
       <div class="form text-center margin-header">
-    <h2>{{ 'navbar.register' | translate }}</h2>
+        <h2>{{ 'navbar.register' | translate }}</h2>
       </div>
     </div>
-      <div class="form-group col-12">
+
+    <div class="form-group col-12">
       <label for="nickName">{{ 'register.username' | translate }}: <span class="span-needed">*</span></label>
       <input type="text" name="nickName" class="form-control" id="nickName"  required ngModel autofocus>
-      </div>
+    </div>
 
     <div class="form-group col-12">
       <label for="inputEmail">{{ 'register.email' | translate }}: <span class="span-needed">*</span></label>
@@ -27,7 +27,7 @@
     <div class="form-group col-12">
       <label for="inputPassword2">{{ 'register.pswd2' | translate }}<span class="span-needed">*</span></label>
       <input type="password" name="loginPasswd2" class="form-control margin" id="inputPassword2"
-              required ngModel (blur)="pswequal(registerForm.form.value.loginPasswd,registerForm.form.value.loginPasswd2)">
+             required ngModel (blur)="pswequal(registerForm.form.value.loginPasswd,registerForm.form.value.loginPasswd2)">
     </div>
 
     <div class="form-group col-12">
@@ -58,8 +58,6 @@
     <div class="form-group col-12">
       <button type="submit" class="btn form-control margin btn-primary loginButtonMargin">{{ 'navbar.register' | translate }}</button>
     </div>
-
-
 
   </form>
 </div>
