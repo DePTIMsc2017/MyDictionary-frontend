@@ -17,6 +17,9 @@
   color: #ffffff !important;
 }
 
+.myd-pointer {
+  cursor: pointer;
+}
 
 /* ********* MEDIA QUERIES [MOBILE FIRST] ********* */
 /* ************************************************ */
