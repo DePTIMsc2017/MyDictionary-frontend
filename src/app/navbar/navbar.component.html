@@ -5,12 +5,19 @@
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <a class="navbar-brand navbar-logo" [routerLink]="['/']"><span>My</span>Dictionary</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-    <ul class="navbar-nav">
+    <form class="form-inline mr-auto myd-searcher-form">
+      <div class="input-group">
+        <i class="material-icons md-28 input-group-addon myd-searcher-base">search</i>
+        <input class="form-control myd-searcher myd-searcher-base myd-searcher-width"
+               type="text" placeholder="{{ 'navbar.search' | translate }}">
+      </div>
+    </form>
+
+    <ul class="navbar-nav myd-nav-action-buttons">
       <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
         <a class="nav-link" [routerLink]="['/login']"><i class="material-icons">exit_to_app</i> {{ 'navbar.login' | translate }}</a>
       </li>

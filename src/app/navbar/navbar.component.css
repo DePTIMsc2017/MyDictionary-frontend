@@ -22,6 +22,34 @@
   cursor: pointer;
 }
 
+.myd-searcher-form {
+  padding-left: 52px;
+}
+
+.myd-searcher {
+  height: 72px;
+  font-size: 24px;
+}
+
+.myd-searcher-base {
+  border: 0;
+  border-radius: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white !important;
+}
+
+.myd-nav-action-buttons {
+  margin-top: 14px;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.myd-searcher-width {
+  width: 50vw;
+}
+
 /* ********* MEDIA QUERIES [MOBILE FIRST] ********* */
 /* ************************************************ */
 
@@ -29,6 +57,10 @@
 @media only screen and (max-width : 1199px) {
   .sidebar .nav-link{
     padding: 15px 13px;
+  }
+
+  .myd-searcher-width {
+    width: 30vw;
   }
 }
 
@@ -67,6 +99,15 @@
 
   .navbar-inverse .navbar-toggler:active {
     border-color: transparent !important;
+  }
+
+  .myd-searcher-form {
+    padding-left: 1px;
+  }
+
+  .myd-searcher {
+    height: 50px;
+    font-size: 18px;
   }
 }
 

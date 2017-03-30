@@ -13,7 +13,8 @@
     "logout": "Kijelentkezés",
     "about": "Súgó",
     "register":"Regisztráció",
-    "language": "Nyelv"
+    "language": "Nyelv",
+    "search": "Keresés"
   },
   "register": {
     "username": "Felhasználónév",

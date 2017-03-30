@@ -13,7 +13,8 @@
     "logout": "Logout",
     "about": "About",
     "register":"Registration",
-    "language": "Language"
+    "language": "Language",
+    "search": "Search"
   },
   "register": {
     "username": "Username",
