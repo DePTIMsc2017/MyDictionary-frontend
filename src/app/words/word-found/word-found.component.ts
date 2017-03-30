@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
 })
 export class WordFoundComponent {
   @Input() word;
+  @Input() searched: string;
 
   constructor() { }
 

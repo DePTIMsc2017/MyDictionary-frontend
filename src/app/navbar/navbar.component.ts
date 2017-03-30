@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from 'ng2-translate';
 import { LoginService } from '../shared/login/login.service';
 import { lang } from 'moment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'navbar',
@@ -15,7 +16,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +33,9 @@ export class NavbarComponent implements OnInit {
 
     localStorage.setItem('md-lang', this._lang);
     this.translateService.use(this._lang);
+  }
+
+  search(keyword: string) {
+    this.router.navigate(['findword'], {queryParams: {word: keyword}});
   }
 }
