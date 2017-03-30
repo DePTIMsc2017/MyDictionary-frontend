@@ -1,3 +1,5 @@
+import { Word } from '../models/word.model';
+
 export interface WordsInterface {
 
   /**
@@ -7,7 +9,7 @@ export interface WordsInterface {
    * @param to nyelv amin szeretnénk megtalálni
    * @return null ha a keresett szó nem található, különben a szó
    */
-  search(word: string, from: string, to: string): any
+  search(word: string, from: string, to: string): Array<Word>
 
   /**
    * Szó hozzáadása.

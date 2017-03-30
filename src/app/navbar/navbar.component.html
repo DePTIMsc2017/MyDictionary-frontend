@@ -14,7 +14,7 @@
         <i class="material-icons md-28 input-group-addon myd-searcher-base">search</i>
         <input class="form-control myd-searcher myd-searcher-base myd-searcher-width"
                type="text" placeholder="{{ 'navbar.search' | translate }}"
-                (keyup.enter)="search(keyword.value)" #keyword>
+                (keyup.enter)="search()" [(ngModel)]="_word" name="search">
       </div>
     </form>
 

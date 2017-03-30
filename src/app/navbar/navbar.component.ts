@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   private _lang: string;
+  private _word: string;
 
   constructor(
     private loginService: LoginService,
@@ -35,7 +36,8 @@ export class NavbarComponent implements OnInit {
     this.translateService.use(this._lang);
   }
 
-  search(keyword: string) {
-    this.router.navigate(['findword'], {queryParams: {word: keyword}});
+  search() {
+    this.router.navigate(['findword'], {queryParams: {word: this._word}});
+    this._word = '';
   }
 }

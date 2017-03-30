@@ -1,2 +1,9 @@
 <h1>{{ 'words.welcome' | translate }}</h1>
 Keresett szó: {{ searched }}
+<div *ngFor="let word of words">
+  <ul>
+    <li *ngFor="let mean of word.wordMeaning1">
+      {{ mean.word }} {{ mean.wordClass }}
+    </li>
+  </ul>
+</div>
