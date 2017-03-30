@@ -7,3 +7,7 @@
   color: rgba(24, 80, 136, 1) !important;
   margin-bottom: 2em;
 }
+
+.material-icons {
+  vertical-align: middle;
+}
