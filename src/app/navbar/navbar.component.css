@@ -3,6 +3,7 @@
   color: white;
   border-bottom: rgba(71, 131, 191, 1) solid 3px;
   height: 76px;
+  font-weight: bold;
 }
 
 .navbar-logo{
