@@ -1,3 +1,5 @@
+import { Word } from '../models/word.model';
+
 export let wordsMock: Array<Word> = [
   {
     id: 1,
