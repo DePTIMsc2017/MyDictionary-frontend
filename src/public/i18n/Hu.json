@@ -12,7 +12,9 @@
     "login": "Bejelentkezés",
     "logout": "Kijelentkezés",
     "about": "Súgó",
-    "register":"Regisztráció"
+    "register":"Regisztráció",
+    "language": "Nyelv",
+    "search": "Keresés"
   },
   "register": {
     "username": "Felhasználónév",

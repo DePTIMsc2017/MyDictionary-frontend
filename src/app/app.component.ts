@@ -14,13 +14,13 @@ export class AppComponent implements OnInit {
     private translateService: TranslateService,
     private loginService: LoginService
   ) {
-    this.translateService.addLangs(['en', 'hu']);
-    this.translateService.setDefaultLang('hu');
+    this.translateService.addLangs(['En', 'Hu']);
+    this.translateService.setDefaultLang('Hu');
     this.translateService.onLangChange
       .subscribe(e => localStorage.setItem('md-lang', e.lang));
 
     const lang = localStorage.getItem('md-lang');
-    this.translateService.use(lang ? lang : 'hu');
+    this.translateService.use(lang ? lang : 'Hu');
   }
 
   ngOnInit(): void {

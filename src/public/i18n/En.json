@@ -12,7 +12,9 @@
     "login": "Login",
     "logout": "Logout",
     "about": "About",
-    "register":"Registration"
+    "register":"Registration",
+    "language": "Language",
+    "search": "Search"
   },
   "register": {
     "username": "Username",
