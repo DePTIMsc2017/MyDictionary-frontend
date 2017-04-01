@@ -16,4 +16,9 @@ export interface LoginInterface {
    * Aktuális user kiléptetése. Ha sikeres a kijelentkezés, akkor navigálás a főoldalra, különben hibaüzenet
    */
   logout(): boolean;
+
+  /**
+   * Az akutális felhasználó nevének lekérdezése.
+   */
+  getActualUser(): string;
 }

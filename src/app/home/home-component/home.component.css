@@ -1,11 +1,7 @@
-/* TODO Home html-hez css classok létrehozása. */
-
-/*.first{
-  width: 20rem;
-  margin-right: 10px;
-  border: #969696;
-}*/
-
 .myd-padding-bottom {
- padding-bottom: 30px;
+ padding-bottom: 1em;
+}
+
+.card-text {
+  height: 75px;
 }

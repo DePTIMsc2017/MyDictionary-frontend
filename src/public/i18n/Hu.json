@@ -12,7 +12,9 @@
     "login": "Bejelentkezés",
     "logout": "Kijelentkezés",
     "about": "Súgó",
-    "register":"Regisztráció"
+    "register":"Regisztráció",
+    "language": "Nyelv",
+    "search": "Keresés"
   },
   "register": {
     "username": "Felhasználónév",
@@ -32,5 +34,9 @@
   },
   "users": {
     "welcome": "Felhasználói profil"
+  },
+  "words": {
+    "welcome": "Keresett szó megtalálható!",
+    "notfound": "Keresett szó nem található!"
   }
 }

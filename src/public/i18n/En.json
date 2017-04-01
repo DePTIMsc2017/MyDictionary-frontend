@@ -12,7 +12,9 @@
     "login": "Login",
     "logout": "Logout",
     "about": "About",
-    "register":"Registration"
+    "register":"Registration",
+    "language": "Language",
+    "search": "Search"
   },
   "register": {
     "username": "Username",
@@ -32,5 +34,9 @@
   },
   "users": {
     "welcome": "User Profile"
+  },
+  "words": {
+    "welcome": "Word found",
+    "notfound": "Word not found"
   }
 }

@@ -4,10 +4,10 @@ import { LoginInterface } from './login.interface';
 import { LoginModel } from '../models/login.model';
 import { usersMock } from '../mock/users.mock';
 
-
 @Injectable()
 export class LoginService implements LoginInterface {
-  private _token: String = null;
+  private _token: string = null;
+  private _username: string = null;
 
   constructor(
   ) {
@@ -24,6 +24,7 @@ export class LoginService implements LoginInterface {
     } else {
       if(userExists[0].password === user.loginPasswd) {
         this._token = 'ABCDEFGHIJKLMNOPK';
+        this._username = userExists[0].username;
         localStorage.setItem('currentUser', JSON.stringify({username: userExists[0].username, token: this._token}));
         return true;
       } else {
@@ -42,4 +43,7 @@ export class LoginService implements LoginInterface {
     return this._token !== null;
   }
 
+  getActualUser(): string {
+    return this._username;
+  }
 }

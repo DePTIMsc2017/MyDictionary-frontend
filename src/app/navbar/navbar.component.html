@@ -1,43 +1,47 @@
-<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm navbar-light bg-faded"
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-sm navbar-light bg-faded fixed-top"
      style="z-index: 1001; background-color: #e3f2fd;">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
           aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand navbar-logo" href="#"><span>My</span>Dictionary</a>
+
+  <a class="navbar-brand navbar-logo" [routerLink]="['/']"><span>My</span>Dictionary</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-    <ul class="navbar-nav">
+    <form class="form-inline mr-auto myd-searcher-form">
+      <div class="input-group">
+        <i class="material-icons md-28 input-group-addon myd-searcher-base">search</i>
+        <input class="form-control myd-searcher myd-searcher-base myd-searcher-width"
+               type="text" placeholder="{{ 'navbar.search' | translate }}"
+                (keyup.enter)="search()" [(ngModel)]="_word" name="search">
+      </div>
+    </form>
+
+    <ul class="navbar-nav myd-nav-action-buttons">
       <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
-        <a class="nav-link" routerLink="/login"><i class="fa fa-sign-in fa-fw"></i> {{ 'navbar.login' | translate }}</a>
+        <a class="nav-link" [routerLink]="['/login']"><i class="material-icons">exit_to_app</i> {{ 'navbar.login' | translate }}</a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="lang"
+      <li class="nav-item dropdown" *ngIf="loginService.isLoggedIn()">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-flag fa-fw"></i>
+          <i class="material-icons">account_circle</i> {{ loginService.getActualUser() }}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#" (click)="onTranslate('hu')">Hun</a>
-          <a class="dropdown-item" href="#" (click)="onTranslate('en')">Eng</a>
+          <a class="dropdown-item" [routerLink]="['profile']"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/']" (click)="loginService.logout()">
+            <i class="fa fa-sign-out fa-fw"></i> {{ 'navbar.logout' | translate }}
+          </a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/about"><i class="fa fa-question fa-fw"></i> {{ 'navbar.about' | translate }}</a>
-      </li>
-      <li class="nav-item dropdown" *ngIf="loginService.isLoggedIn()">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink"
-           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fa fa-user fa-fw"></i>
+        <a class="nav-link myd-pointer" id="lang" (click)="onTranslate()" >
+          <i class="material-icons">translate</i> {{ 'navbar.language' | translate }}
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-gear fa-fw"></i> {{ 'navbar.settings' | translate }}</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#"><i class="fa fa-sign-out fa-fw"></i> {{ 'navbar.logout' | translate }}</a>
-        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/about']"><i class="material-icons">help</i> {{ 'navbar.about' | translate }}</a>
       </li>
 
     </ul>

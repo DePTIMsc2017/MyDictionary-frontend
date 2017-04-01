@@ -2,3 +2,20 @@
 .test {
   color: blue;
 }
+
+.myd-header {
+  color: rgba(24, 80, 136, 1) !important;
+  margin-bottom: 2em;
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-28 { font-size: 28px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+
