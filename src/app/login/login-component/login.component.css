@@ -2,15 +2,51 @@
 
 
 .loginTopCenter {
-  position: fixed;
+ position: fixed;
+/*  display: block;*/
   left: 42%;
   top: 15%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgba(24, 80, 136, 0.17);
+  padding: 52px;
+  margin-top: 10px;
+}
+
+.loginTopCenter h2{
+  color: rgba(24, 80, 136, 1);
+  padding-bottom: 20px;
+}
+
+.loginTopCenter .form-control{
+  border: 1px solid rgba(70, 74, 76, 0.08);
+  border-radius: .25rem;
+  margin-bottom: 10px;
+}
+
+.frgtPassw{
+  text-align: center;
+  display: block;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.btn-primary{
+  background-color: #2b92e5;
+}
+
+body{
+ background-color: rgb(233, 233, 232) !important;
+}
+
+main{
+  margin: 0 auto;
 }
 
 .noPadding {
     margin-bottom: 0px;
 }
 
-.loginButtonMargin {    
+.loginButtonMargin {
     margin: 0px;
 }
