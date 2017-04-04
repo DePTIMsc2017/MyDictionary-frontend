@@ -4,17 +4,17 @@
   </button>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item sidebar-navli">
-      <a class="nav-link" href="#">
+      <a class="nav-link" [routerLink]="['/']">
         <span *ngIf="_showIt">{{ 'sidebar.my_words' | translate }}</span>
       </a>
     </li>
     <li class="nav-item sidebar-navli">
-      <a class="nav-link" href="#">
+      <a class="nav-link" [routerLink]="['/']">
         <span *ngIf="_showIt">{{ 'sidebar.exec_lesson' | translate }}</span>
       </a>
     </li>
     <li class="nav-item sidebar-navli">
-      <a class="nav-link" href="#">
+      <a class="nav-link"[routerLink]="['/']">
         <span *ngIf="_showIt">{{ 'sidebar.export' | translate }}</span>
       </a>
     </li>

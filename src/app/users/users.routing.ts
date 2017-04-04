@@ -8,6 +8,7 @@ const routes: Routes = [
     component: UserProfileComponent,
     canActivate: [AuthGuardService]
   }
+
 ];
 
 export const routing = RouterModule.forChild(routes);
