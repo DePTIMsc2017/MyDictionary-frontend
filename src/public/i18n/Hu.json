@@ -33,7 +33,11 @@
     "export": "Exportálás"
   },
   "users": {
-    "welcome": "Felhasználói profil"
+    "welcome": "Felhasználói profil",
+    "new_password": "Új jelszó",
+    "new_password_again": "Új jelszó ismét",
+    "actual_password": "jelenlegi jelszó",
+    "wrong_password": "Rossz jelenlegi jelszó, művelet sikertelen"
   },
   "words": {
     "welcome": "Keresett szó megtalálható!",

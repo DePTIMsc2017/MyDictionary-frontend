@@ -33,7 +33,11 @@
     "export": "Export"
   },
   "users": {
-    "welcome": "User Profile"
+    "welcome": "User Profile",
+    "new_password": "New password",
+    "new_password_again": "New password again",
+    "actual_password": "current password",
+    "wrong_password": "wrong current password, operation unsuccesful"
   },
   "words": {
     "welcome": "Word found",
