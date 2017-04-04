@@ -3,19 +3,21 @@
   color: white;
   border-bottom: rgba(71, 131, 191, 1) solid 3px;
   height: 76px;
-  font-weight: bold;
 }
 
 .navbar-logo{
   padding-left: 40px;
+  font-weight: bold;
 }
 
 .navbar-logo span{
   color: rgba(129, 182, 236, 1);
+  font-weight: bold;
 }
 
 .nav-link{
   color: #ffffff !important;
+  font-size: 16px;
 }
 
 .myd-pointer {
@@ -28,7 +30,7 @@
 
 .myd-searcher {
   height: 72px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .myd-searcher-base {
@@ -47,7 +49,7 @@
 }
 
 .myd-searcher-width {
-  width: 50vw;
+  width: 40vw;
 }
 
 /* ********* MEDIA QUERIES [MOBILE FIRST] ********* */
@@ -60,13 +62,16 @@
   }
 
   .myd-searcher-width {
-    width: 30vw;
+    width: 30vw !important;
   }
 }
 
 /* Small Devices [AND DOWN] */
 @media only screen and (max-width : 991px) {
 
+  .input-group {
+    width: 100%;
+  }
 }
 
 /* Half Small Devices [AND DOWN] */
@@ -119,7 +124,9 @@
 @media only screen and (min-width : 1200px) {}
 
 /* Medium Devices, Tablets / Desktops [md] */
-@media only screen and (min-width : 992px) and (max-width : 1199px) {}
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+}
 
 /* Small Devices, Tablets [sm] */
 @media only screen and (min-width : 768px) and (max-width : 991px) {
