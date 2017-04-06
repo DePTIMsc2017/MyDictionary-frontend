@@ -1,21 +1,21 @@
 <nav class="navbar-toggleable-sm sidebar" [class.show-it]="_showIt">
-  <button class="navbar-toggler justify-content-center" type="button" (click)="onShow()">
+  <button class="navbar-toggler justify-content-center" type="button" (click)="onShow()" id="sidebarSmallScreenTogler">
     <span class="fa fa-bars menu-togl"></span>
   </button>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item sidebar-navli">
       <a class="nav-link" [routerLink]="['/']">
-        <span *ngIf="_showIt">{{ 'sidebar.my_words' | translate }}</span>
+        <span *ngIf="_showIt" id="sidebarMyWords">{{ 'sidebar.my_words' | translate }}</span>
       </a>
     </li>
     <li class="nav-item sidebar-navli">
       <a class="nav-link" [routerLink]="['/']">
-        <span *ngIf="_showIt">{{ 'sidebar.exec_lesson' | translate }}</span>
+        <span *ngIf="_showIt" id="sidebarExcercise">{{ 'sidebar.exec_lesson' | translate }}</span>
       </a>
     </li>
     <li class="nav-item sidebar-navli">
       <a class="nav-link"[routerLink]="['/']">
-        <span *ngIf="_showIt">{{ 'sidebar.export' | translate }}</span>
+        <span *ngIf="_showIt" id="sidebarExport">{{ 'sidebar.export' | translate }}</span>
       </a>
     </li>
   </ul>
