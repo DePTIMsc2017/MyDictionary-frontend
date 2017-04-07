@@ -2,10 +2,10 @@
   <div class="row d-flex justify-content-between">
     <h1>{{ 'users.welcome' | translate }}</h1>
     <div class="btn-group blocks ">
-      <button type="button" class="btn btn-primary loginButtonMargin " (click)="onChangeMod(profileForm)">Adat
+      <button type="button" class="btn btn-primary loginButtonMargin " (click)="onChangeMod(profileForm)" id="buttonChangeData">Adat
         módosítás
       </button>
-      <button type="button" class="btn btn-primary loginButtonMargin" (click)="onPasswordChangeMod()">
+      <button type="button" class="btn btn-primary loginButtonMargin" (click)="onPasswordChangeMod()" id="buttonChangePassword">
         jelszó megváltoztatása
       </button>
     </div>
@@ -19,7 +19,7 @@
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
           <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].username}}</label>
-          <input ngModel name="username" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="currentUser[0].username">
+          <input ngModel name="username" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="currentUser[0].username" id="inputUserName">
         </div>
       </div>
 
@@ -29,7 +29,7 @@
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
           <label class=" col-form-label" *ngIf="modify == false">{{tmpUser.birthdate}}</label>
-          <input ngModel name="birthdate" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.birthdate">
+          <input ngModel name="birthdate" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.birthdate" id="inputBirthDay">
         </div>
       </div>
 
@@ -40,7 +40,7 @@
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
           <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].email}}</label>
-          <input ngModel name="email" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="currentUser[0].email">
+          <input ngModel name="email" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="currentUser[0].email" id="inputEmail">
         </div>
       </div>
 
@@ -50,7 +50,7 @@
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
           <label class=" col-form-label" *ngIf="modify == false">{{tmpUser.country}}</label>
-          <input ngModel name="country" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.country">
+          <input ngModel name="country" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.country" id="inputCountry">
         </div>
       </div>
 
@@ -60,7 +60,7 @@
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
           <label class=" col-form-label" *ngIf="modify == false">{{tmpUser.city}}</label>
-          <input ngModel name="city" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.city">
+          <input ngModel name="city" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.city" id="inputCity">
         </div>
       </div>
 
@@ -70,7 +70,7 @@
           <label class=" col-form-label">{{ 'users.new_password' | translate }}:</label>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <input type="password" ngModel name="newPswd" class="form-control" >
+          <input type="password" ngModel name="newPswd" class="form-control" id="inputNewPassword">
         </div>
       </div>
 
@@ -79,7 +79,7 @@
           <label class=" col-form-label">{{ 'users.new_password_again' | translate }}:</label>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <input type="password" ngModel name="newPswdA" class="form-control" (blur)="pswequal(profileForm.form.value.newPswd,profileForm.form.value.newPswdA)">
+          <input type="password" ngModel name="newPswdA" class="form-control" (blur)="pswequal(profileForm.form.value.newPswd,profileForm.form.value.newPswdA)" id="inputNewPasswordAgain">
         </div>
       </div>
     </div>
@@ -90,10 +90,10 @@
           <label class="col-form-label">{{ 'users.actual_password' | translate }}:</label>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <input type="password" ngModel name="oldPswd" class="form-control">
+          <input type="password" ngModel name="oldPswd" class="form-control" id="inputOldPassword">
         </div>
         <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <button type="submit" class="btn form-control btn-primary loginButtonMargin">
+          <button type="submit" class="btn form-control btn-primary loginButtonMargin" id="buttonSubmit">
             Megerősítés
           </button>
         </div>

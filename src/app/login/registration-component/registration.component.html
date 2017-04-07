@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="nickName">{{ 'register.username' | translate }}: <span class="span-needed">*</span></label>
-      <input type="text" name="nickName" class="form-control" id="nickName"  required ngModel autofocus>
+      <input type="text" name="nickName" class="form-control" id="inputNickName"  required ngModel autofocus>
     </div>
   </div>
 
@@ -29,7 +29,7 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4" [class.has-danger]="_passErr">
       <label for="inputPassword2">{{ 'register.pswd2' | translate }}<span class="span-needed">*</span></label>
-      <input type="password" name="loginPasswd2" class="form-control margin" id="inputPassword2"
+      <input type="password" name="loginPasswd2" class="form-control margin" id="inputPasswordAgain"
              required ngModel (blur)="pswequal(registerForm.form.value.loginPasswd, registerForm.form.value.loginPasswd2)">
     </div>
   </div>
@@ -37,14 +37,14 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="birthDate">{{ 'register.birthdate' | translate }}</label>
-      <input type="text" name="birthDate" class="form-control margin" id="birthDate">
+      <input type="text" name="birthDate" class="form-control margin" id="InputBirthDate">
     </div>
   </div>
 
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="country">{{ 'register.country' | translate }}</label>
-      <input type="text" name="country" class="form-control margin" id="country">
+      <input type="text" name="country" class="form-control margin" id="InputCountry">
     </div>
   </div>
 
@@ -52,13 +52,13 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="city">{{ 'register.city' | translate }}</label>
-      <input type="text" name="city" class="form-control margin" id="city">
+      <input type="text" name="city" class="form-control margin" id="InputCity">
     </div>
   </div>
 
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-      <input type="checkbox"  required id="accept">
+      <input type="checkbox"  required id="checkboxAccept">
       <label for="accept">{{ 'register.accept' | translate }}</label>
     </div>
   </div>
@@ -79,7 +79,7 @@
 
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-      <button type="submit" class="btn form-control btn-primary">{{ 'navbar.register' | translate }}</button>
+      <button type="submit" class="btn form-control btn-primary" id="buttonSubmit">{{ 'navbar.register' | translate }}</button>
     </div>
   </div>
 </form>
