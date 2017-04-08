@@ -15,7 +15,7 @@ after_success:
 - mv *.* html
 - mv -r assets html
 - scp -rp html depuser@104.154.171.198:/var/www/html
-before_install:
+before_deploy:
 - openssl aes-256-cbc -K $encrypted_38e477345159_key -iv $encrypted_38e477345159_iv
   -in depkey.ppk.enc -out depkey.ppk -d
 - eval "$(ssh-agent -s)"
