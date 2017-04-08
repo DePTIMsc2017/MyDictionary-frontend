@@ -4,10 +4,6 @@ node_js:
 branches:
   only:
   - master
-before_script:
-- npm install
-script:
-- ng build --prod
 addons:
   ssh_known_hosts: 104.154.171.198
 before_deploy:
@@ -15,3 +11,11 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
+before_script:
+- npm install
+script:
+- ng build --prod
+after_success:
+- mkdir html
+- mv * html
+- sshpass -p $pass scp -rp html orbi0101@104.154.171.198:/var/www/html
