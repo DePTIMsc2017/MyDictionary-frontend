@@ -18,4 +18,4 @@ script:
 after_success:
 - mkdir html
 - mv * html
-- sshpass -p $pass scp -rp html orbi0101@104.154.171.198:/var/www/html
+- scp -rp html orbi0101@104.154.171.198:/var/www/html
