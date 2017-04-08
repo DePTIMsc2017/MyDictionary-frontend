@@ -8,6 +8,3 @@ before_script:
 - npm install
 script:
 - ng build --prod
-before_install:
-- openssl aes-256-cbc -K $encrypted_95111a9d0067_key -iv $encrypted_95111a9d0067_iv
-  -in my-dictionary-google-ssh-key.ppk.enc -out my-dictionary-google-ssh-key.ppk -d
