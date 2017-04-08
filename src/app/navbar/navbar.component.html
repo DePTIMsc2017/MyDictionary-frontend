@@ -2,7 +2,7 @@
      style="z-index: 1001; background-color: #e3f2fd;">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
           data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation" id="navbarToggle">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -12,15 +12,15 @@
     <form class="form-inline mr-auto myd-searcher-form">
       <div class="input-group">
         <i class="material-icons md-28 input-group-addon myd-searcher-base">search</i>
-        <input class="form-control myd-searcher myd-searcher-base myd-searcher-width"
+        <input class="form-``control myd-searcher myd-searcher-base myd-searcher-width"
                type="text" placeholder="{{ 'navbar.search' | translate }}"
-                (keyup.enter)="search()" [(ngModel)]="_word" name="search">
+                (keyup.enter)="search()" [(ngModel)]="_word" name="search" id="navbarSearch">
       </div>
     </form>
 
     <ul class="navbar-nav myd-nav-action-buttons">
       <li class="nav-item" *ngIf="!loginService.isLoggedIn()">
-        <a class="nav-link" [routerLink]="['/login']"><i class="material-icons">exit_to_app</i> {{ 'navbar.login' | translate }}</a>
+        <a class="nav-link" [routerLink]="['/login']"><i class="material-icons" id="navbarLogin">exit_to_app</i> {{ 'navbar.login' | translate }}</a>
       </li>
       <li class="nav-item dropdown" *ngIf="loginService.isLoggedIn()">
         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink"
@@ -28,20 +28,20 @@
           <i class="material-icons">account_circle</i> {{ loginService.getActualUser() }}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['profile']"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
+          <a class="dropdown-item" [routerLink]="['profile']" id="navbarProfile"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" [routerLink]="['/']" (click)="loginService.logout()">
+          <a class="dropdown-item" [routerLink]="['/']" (click)="loginService.logout()" id="navbarLogout">
             <i class="fa fa-sign-out fa-fw"></i> {{ 'navbar.logout' | translate }}
           </a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link myd-pointer" id="lang" (click)="onTranslate()" >
+        <a class="nav-link myd-pointer" id="navbarLanguage" (click)="onTranslate()" >
           <i class="material-icons">translate</i> {{ 'navbar.language' | translate }}
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/about']"><i class="material-icons">help</i> {{ 'navbar.about' | translate }}</a>
+        <a class="nav-link" [routerLink]="['/about']" id="navbarAbout"><i class="material-icons">help</i> {{ 'navbar.about' | translate }}</a>
       </li>
 
     </ul>
