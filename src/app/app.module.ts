@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarModule } from './navbar/navbar.module';
 
 import { HomeModule } from './home/home.module';
-import { TranslateModule, TranslateLoader } from 'ng2-translate';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from './shared/utils';
 import { LoginModule } from './login/login.module';
 import { UsersModule } from './users/users.module';
@@ -15,6 +15,8 @@ import { WordsModule } from './words/words.module';
 
 import { routing } from './app.routing';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -28,10 +30,13 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
     WordsModule,
     HttpModule,
     UsersModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
-      provide: TranslateLoader,
-      useFactory: (createTranslateLoader),
-      deps: [Http]
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [Http]
+      }
     }),
     routing,
     PageNotFoundModule

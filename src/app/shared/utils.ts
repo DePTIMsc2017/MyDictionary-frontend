@@ -1,6 +1,6 @@
-import { TranslateStaticLoader } from 'ng2-translate';
 import { Http } from '@angular/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-export function createTranslateLoader(http: Http) {
-  return new TranslateStaticLoader(http, 'src/public/i18n', '.json');
+export function createTranslateLoader(http: Http): TranslateHttpLoader {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
