@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TranslateModule } from 'ng2-translate';
+import { TranslateModule } from '@ngx-translate/core';
 import { LoginService } from './login/login.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from '../shared/login/login.service';
 import { lang } from 'moment';
 import { Router } from '@angular/router';
