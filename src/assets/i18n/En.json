@@ -30,7 +30,8 @@
   "sidebar": {
     "my_words": "My words",
     "exec_lesson": "Exercise lessons",
-    "export": "Export"
+    "export": "Export",
+    "addword": "Add Word"
   },
   "users": {
     "welcome": "User Profile",

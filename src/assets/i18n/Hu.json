@@ -30,7 +30,8 @@
   "sidebar": {
     "my_words": "Saját szógyűjtemény",
     "exec_lesson": "Gyakorló feladatok",
-    "export": "Exportálás"
+    "export": "Exportálás",
+    "addword": "Szó hozzáadása"
   },
   "users": {
     "welcome": "Felhasználói profil",
