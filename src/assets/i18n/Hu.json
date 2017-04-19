@@ -31,7 +31,8 @@
     "my_words": "Saját szógyűjtemény",
     "exec_lesson": "Gyakorló feladatok",
     "export": "Exportálás",
-    "addword": "Szó hozzáadása"
+    "addword": "Szó hozzáadása",
+    "usermanagement":"Felhasználók kezelése"
   },
   "users": {
     "welcome": "Felhasználói profil",
