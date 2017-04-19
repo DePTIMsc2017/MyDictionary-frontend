@@ -1,9 +1,16 @@
-<h1>{{ 'words.welcome' | translate }}</h1>
-Keresett szó: {{ searched }}
-<div *ngFor="let word of words">
-  <ul>
-    <li *ngFor="let mean of word.wordMeaning1">
-      {{ mean.word }} {{ mean.wordClass }}
-    </li>
-  </ul>
-</div>
+<table class="table table-bordered" *ngFor="let word of words" style="width: 700px ">
+
+    <thead class="tablehead">
+    <th>Keresett szó</th>
+    <th>Jelentése</th>
+    <th>Szófaj</th>
+    </thead>
+  <tr *ngFor="let mean of word.wordMeaning1" style="color:black">
+    <td>{{ searched }}</td>
+    <td>{{ mean.word }} </td>
+    <td>{{ mean.wordClass }}</td>
+  </tr>
+
+</table>
+
+
