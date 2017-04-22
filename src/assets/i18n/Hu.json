@@ -25,7 +25,14 @@
     "country":"Ország",
     "city":"Város",
     "accept":"Elfogadom a feltételeket",
-    "star":"-gal jelölt mezők kitöltése kötelező"
+    "star":"-gal jelölt mezők kitöltése kötelező",
+    "empty": "A jelszó mező üres",
+    "length": "A jelszónak legalább 5 karakter hosszúnak kell lennie",
+    "justalphanum": "A jelszó csak számból, illetve kis és nagy betűből állhat",
+    "alphanum": "A jelszónak tartalmaznia kell számot, kis- és egy nagy betűt",
+    "same": "A felhasználónév és a jelszó nem lehet ugyanaz",
+    "notsame": "A két jelszó nem egyezik meg"
+
   },
   "sidebar": {
     "my_words": "Saját szógyűjtemény",
@@ -38,10 +45,26 @@
     "new_password": "Új jelszó",
     "new_password_again": "Új jelszó ismét",
     "actual_password": "jelenlegi jelszó",
-    "wrong_password": "Rossz jelenlegi jelszó, művelet sikertelen"
+    "wrong_password": "Rossz jelenlegi jelszó, művelet sikertelen",
+    "data_modify": "Adat módosítás",
+    "change_pswd": "Jelszó megváltoztatása",
+    "confirm": "Megerősítés"
   },
   "words": {
     "welcome": "Keresett szó megtalálható!",
     "notfound": "Keresett szó nem található!"
+  },
+  "addWord": {
+    "welcome": "Szavak felvétele a rendszer adatbázisába",
+    "word": "Magyar szó",
+    "meaning": "Jelentése",
+    "word_class": "szófaj",
+    "noun": "főnév",
+    "adjactive": "melléknév",
+    "verb": "ige",
+    "adverb": "határozószó",
+    "+1word": "+1 szó",
+    "+5words": "+5 szó",
+    "send": "Küldés"
   }
 }
