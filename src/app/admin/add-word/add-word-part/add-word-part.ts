@@ -1,6 +1,6 @@
 import { Component , Input} from '@angular/core';
-import { Word } from "C:/Users/Burai Péter/Egyetem/2. félév/szoftverrendszerek tervezése/project/MyDictionary-frontend/src/app/shared/models/word.model"
-import { Language } from "C:/Users/Burai Péter/Egyetem/2. félév/szoftverrendszerek tervezése/project/MyDictionary-frontend/src/app/shared/models/language.model";
+import { Word } from "../../../shared/models/word.model";
+import { Language } from "../../../shared/models/language.model";
 
 @Component({
   selector: 'add-word-part',
