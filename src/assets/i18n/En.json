@@ -37,7 +37,8 @@
     "my_words": "My words",
     "exec_lesson": "Exercise lessons",
     "export": "Export",
-    "addword": "Add Word"
+    "addword": "Add Word",
+    "usermanagement":"User management"
   },
   "users": {
     "welcome": "User Profile",

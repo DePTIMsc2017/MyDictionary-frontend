@@ -23,6 +23,11 @@
         <span *ngIf="_showIt" id="sidebarAddWord">{{ 'sidebar.addword' | translate }}</span>
       </a>
     </li>
+    <li class="nav-item sidebar-navli">
+      <a class="nav-link"[routerLink]="['/admin/usermanagement']">
+        <span *ngIf="_showIt" id="sidebarUsermanagement">{{ 'sidebar.usermanagement' | translate }}</span>
+      </a>
+    </li>
   </ul>
 </nav>
 

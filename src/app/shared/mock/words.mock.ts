@@ -3,7 +3,7 @@ import { Word } from '../models/word.model';
 export let wordsMock: Array<Word> = [
   {
     id: 1,
-    word: 'alma',
+    word: 'vár',
     wordClass: 'Főnév',
     language: {
       id: 1,
@@ -12,8 +12,17 @@ export let wordsMock: Array<Word> = [
     wordMeaning1: [
       {
         id: 2,
-        word: 'apple',
-        wordClass: 'Noun',
+        word: 'wait',
+        wordClass: 'verb',
+        language: {
+          id: 2,
+          name: 'angol'
+        }
+      },
+      {
+        id: 3,
+        word: 'castle',
+        wordClass: 'noun',
         language: {
           id: 2,
           name: 'angol'

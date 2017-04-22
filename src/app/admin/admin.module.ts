@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { routing } from './admin.routing';
 import {AddWordComponent} from './add-word/add-word.component';
 import {AddWordPartComponent} from "./add-word/add-word-part/add-word-part";
+import {UserManagementComponent} from "./user-management/user-management.component";
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {AddWordPartComponent} from "./add-word/add-word-part/add-word-part";
   exports: [],
   declarations: [
     AddWordComponent,
-    AddWordPartComponent
+    AddWordPartComponent,
+    UserManagementComponent
   ],
   providers: [],
 })

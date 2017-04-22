@@ -1,0 +1,37 @@
+.tablehead{
+  background-color:rgba(71, 131, 191, 1);
+  color: white;
+}
+
+
+.submit-button{
+  /* style properties go here */
+}
+
+.btn1 {
+  background-color:rgba(101,176,211,0.51); /* Green */
+  border-radius: 8px;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn2 {
+  background-color:rgba(172,20,12,0.7); /* Green */
+  border-radius: 8px;
+  color: white;
+  padding: 3px 3px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tdb{
+  text-align: center;
+  align-items: center;
+
+}
