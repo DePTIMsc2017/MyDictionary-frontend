@@ -25,7 +25,13 @@
     "country":"Country",
     "city":"City",
     "accept":"I agree to terms and conditions ",
-    "star":"Fields marked with a star are compulsory."
+    "star":"Fields marked with a star are compulsory.",
+    "empty": "A password field is empty",
+    "length": "The length of the password must be at least 5",
+    "justalphanum": "The password can include only alphabetical and numerical characters",
+    "alphanum": "the password must include one upper and lowercase letter and one number",
+    "same": "The username and the password have to be different",
+    "notsame": "The two password is not the same"
   },
   "sidebar": {
     "my_words": "My words",
@@ -39,10 +45,26 @@
     "new_password": "New password",
     "new_password_again": "New password again",
     "actual_password": "current password",
-    "wrong_password": "wrong current password, operation unsuccesful"
+    "wrong_password": "wrong current password, operation unsuccesful",
+    "data_modify": "Data modify",
+    "change_pswd": "Change password",
+    "confirm": "Confirm"
   },
   "words": {
     "welcome": "Word found",
     "notfound": "Word not found"
+  },
+  "addWord": {
+    "welcome": "Adding new words to the database",
+    "word": "Hungarian word",
+    "meaning": "Meaning",
+    "word_class": "Word class",
+    "noun": "noun",
+    "adjactive": "adjactive",
+    "verb": "verb",
+    "adverb": "adverb",
+    "+1word": "+1 word",
+    "+5words": "+5 words",
+    "send": "Send"
   }
 }

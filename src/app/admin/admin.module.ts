@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { routing } from './admin.routing';
 import {AddWordComponent} from './add-word/add-word.component';
+import {AddWordPartComponent} from "./add-word/add-word-part/add-word-part";
 import {UserManagementComponent} from "./user-management/user-management.component";
 
 
@@ -16,6 +17,7 @@ import {UserManagementComponent} from "./user-management/user-management.compone
   exports: [],
   declarations: [
     AddWordComponent,
+    AddWordPartComponent,
     UserManagementComponent
   ],
   providers: [],

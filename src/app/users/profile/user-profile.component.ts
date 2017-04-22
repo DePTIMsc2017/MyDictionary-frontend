@@ -1,44 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { usersMock } from  '../../shared/mock/users.mock';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  styleUrls: ['./user-profile.component.css'],
+  animations: [trigger(
+    'onfail', [
+      state('no_fail', style({opacity: 0})),
+      state('has_fail', style({opacity: 1})),
+      transition('has_fail => no_fail', animate('.5s')),
+      transition('no_fail => has_fail', animate('.5s'))
+    ]
+  )]
 })
 export class UserProfileComponent implements OnInit {
   modify = false;
   passwordchange = false;
-  pswdOk = true;
-  actualUser =  {};
   tmpUser = {};
   currentUser;
-  constructor() {
 
+  private _failExpression: string;
+  private _passErr: boolean;
+  private _errorMessage: string;
+  constructor() {
+    this._passErr = false;
+    this._failExpression = 'no_fail';
 
   let name= JSON.parse(localStorage.getItem('currentUser'));
-  console.log(name);
+
   this.currentUser = usersMock.filter(data => {
       return data.username == name.username;
     });
 
-  this.actualUser={
-    birthdate: '1990.01.14.',
-    country: 'Malaysia',
-    city: 'Kuala Lumpur',
-  };
-  this.copy(this.tmpUser, this.actualUser);
+  this.copy(this.tmpUser, this.currentUser[0]);
 
   }
 
   copy(user1, user2)
   {
+    user1.username = user2.username;
+    user1.email = user2.email;
+    user1.password = user2.password;
     user1.birthdate = user2.birthdate;
     user1.country = user2.country;
     user1.city = user2.city;
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   onChangeMod(Loginform){
     console.log(Loginform);
@@ -54,24 +66,37 @@ export class UserProfileComponent implements OnInit {
   }
 
   confirm(pswd:any, nickName:any){
+    this._passErr = false;
+    this._errorMessage = undefined;
+    this._failExpression = 'no_fail';
     console.log(pswd);
     if (pswd===""){
-      alert("A jelszó mező üres");
+      this._passErr = true;
+      this._errorMessage = 'register.empty';
+      this._failExpression = 'has_fail';
       return;}
     if(pswd.length<5){
-      alert("A jelszó legalább 5 karakter hosszúnak kell lennie");
+      this._passErr = true;
+      this._errorMessage = 'register.length';
+      this._failExpression = 'has_fail';
       return;}
 
     if(!/^\w*$/.test(pswd)){
-      alert("A jelszó csak számokat, kis- és nagy betűket tartalmazhat")
+      this._passErr = true;
+      this._errorMessage = 'register.justalphanum';
+      this._failExpression = 'has_fail';
       return;
     }
     if(pswd===nickName){
-      alert("A felhasználónév és a jelszó nem lehet ugyan az");
+      this._passErr = true;
+      this._errorMessage = 'register.same';
+      this._failExpression = 'has_fail';
       return;
     }
     if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/.test(pswd) ){
-      alert("A jelszónak tartalmaznia kell számot, kis- és nagy betűt");
+      this._passErr = true;
+      this._errorMessage = 'register.alphanum';
+      this._failExpression = 'has_fail';
       return;
     }
 
@@ -80,7 +105,9 @@ export class UserProfileComponent implements OnInit {
 
   pswequal(ps1:any, ps2:any) {
     if (ps1 !== ps2) {
-      alert("A két jelsző nem egyezik meg");
+      this._passErr = true;
+      this._errorMessage = 'register.notsame';
+      this._failExpression = 'has_fail';
       return;
     }
 
@@ -89,7 +116,6 @@ export class UserProfileComponent implements OnInit {
 
   onSubmit(values){
 
-    console.log(this.actualUser);
     console.log(this.tmpUser);
 
     if(values.oldPswd === this.currentUser[0].password)
@@ -100,21 +126,24 @@ export class UserProfileComponent implements OnInit {
       }
       else {
       this.currentUser[0].username = values.username;
-      this.actualUser['birthdate']= values.birthdate;
+      this.currentUser[0].birthdate = values.birthdate;
       this.currentUser[0].email = values.email;
-      this.actualUser['country'] = values.country;
-      this.actualUser['city'] = values.city;
+      this.currentUser[0].country = values.country;
+      this.currentUser[0].city = values.city;
 
       }
-      this.tmpUser = this.actualUser;
+
+      alert("Sikeres módosítás!");
     }
     else{
-      console.log("NEM SIKERÜLT!");
-      alert("Nem megfelelő jelszó!");
+      alert("Nem sikerült a módosítás!");
     }
+    this.tmpUser = this.currentUser[0];
     this.modify = false;
     this.passwordchange = false;
-    localStorage.setItem('currentUser', JSON.stringify({username: this.currentUser[0].username, token: this.currentUser[0].token}));
+    this._passErr = false;
+    this._errorMessage = undefined;
+    this._failExpression = 'no_fail';
     console.log("*************");
     console.log(usersMock);
     return;
