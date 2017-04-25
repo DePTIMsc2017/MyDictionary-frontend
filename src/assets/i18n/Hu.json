@@ -1,7 +1,8 @@
 {
   "general": {
     "welcome": "My Dictionary webapplikáció készen áll a fordításra!",
-    "working": "Működik!"
+    "working": "Működik!",
+    "back": "Vissza"
   },
   "login": {
     "wrong_pass_or_user": "Hibás felhasználónév/jelszó!"
@@ -31,8 +32,9 @@
     "justalphanum": "A jelszó csak számból, illetve kis és nagy betűből állhat",
     "alphanum": "A jelszónak tartalmaznia kell számot, kis- és egy nagy betűt",
     "same": "A felhasználónév és a jelszó nem lehet ugyanaz",
-    "notsame": "A két jelszó nem egyezik meg"
-
+    "notsame": "A két jelszó nem egyezik meg",
+    "terms": "Felhasználói feltételek",
+    "readTerms": "Feltételek olvasása"
   },
   "sidebar": {
     "my_words": "Saját szógyűjtemény",
