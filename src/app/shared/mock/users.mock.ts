@@ -1,4 +1,6 @@
-export let usersMock = [
+import { RegistrationModel } from '../models/registration.model';
+
+export let usersMock: Array<RegistrationModel> = [
   {
     username: 'teszt',
     email: 'teszt@teszt.hu',
