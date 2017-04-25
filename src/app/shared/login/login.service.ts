@@ -16,7 +16,6 @@ export class LoginService implements LoginInterface {
   }
 
   login(user: LoginModel): boolean {
-    console.log(usersMock);
     let userExists = usersMock.filter(data => {
       return data.email === user.loginEmail;
     });
