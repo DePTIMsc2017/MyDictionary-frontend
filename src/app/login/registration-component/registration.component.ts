@@ -1,5 +1,10 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { ngbDateStructToString } from '../../shared/utils';
+import { RegistrationService } from '../../shared/registration/registration.service';
+import { RegistrationModel } from '../../shared/models/registration.model';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ReadTermsComponent } from './read-terms.component';
 
 @Component({
   selector: 'registration',
@@ -17,17 +22,41 @@ export class RegistrationComponent implements OnInit {
 
   private _failExpression: string;
   private _passErr: boolean;
+  private _usrErr: boolean;
   private _errorMessage: string;
 
-  constructor() { }
+  constructor(
+    private registrationService: RegistrationService,
+    private modal: NgbModal
+  ) { }
 
   ngOnInit() {
     this._passErr = false;
+    this._usrErr = false;
     this._failExpression = 'no_fail';
   }
 
-  register() {
-    console.log('Register');
+  register(form, valid) {
+    if (!valid) {
+      return;
+    }
+
+    let submitUser: RegistrationModel = {
+      username: form['nickName'],
+      email: form['loginEmail'],
+      password: form['loginPasswd'],
+      birthdate: ngbDateStructToString(form['birthDate']),
+      country: form['country'],
+      city: form['city']
+    };
+
+    if (this.registrationService.register(submitUser)) {
+      console.log('Success');
+    } else {
+      this._usrErr = true;
+      this._errorMessage = 'Felhasználónév már foglalt!';
+      this._failExpression = 'has_fail';
+    }
   }
 
   confirm(pswd:any, nickName:any){
@@ -82,5 +111,9 @@ export class RegistrationComponent implements OnInit {
       this._failExpression = 'has_fail';
       return;
     }
+  }
+
+  readTerms() {
+    const ref = this.modal.open(ReadTermsComponent, {size: 'lg'});
   }
 }

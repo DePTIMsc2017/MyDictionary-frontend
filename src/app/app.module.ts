@@ -16,7 +16,8 @@ import { WordsModule } from './words/words.module';
 import { routing } from './app.routing';
 import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {AdminModule} from "./admin/admin.module";
+import { AdminModule } from './admin/admin.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {AdminModule} from "./admin/admin.module";
     UsersModule,
     BrowserAnimationsModule,
     AdminModule,
+    NgbModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

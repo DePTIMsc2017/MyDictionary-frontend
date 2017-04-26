@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { RegistrationService } from './registration/registration.service';
 import { WordsService } from './words/words.service';
 import { AuthGuardService } from './guards/auth-guard.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AuthGuardService } from './guards/auth-guard.service';
     exports: [
       CommonModule,
       TranslateModule,
-      FormsModule
+      FormsModule,
+      NgbModule
     ],
     declarations: [
     ],

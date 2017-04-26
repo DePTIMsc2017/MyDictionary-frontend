@@ -3,6 +3,7 @@ import { LoginComponent } from './login-component/login.component';
 import { routing } from './login.routes';
 import { SharedModule } from '../shared/shared.module';
 import { RegistrationComponent } from './registration-component/registration.component';
+import { ReadTermsComponent } from './registration-component/read-terms.component';
 
 @NgModule({
     imports: [
@@ -12,8 +13,12 @@ import { RegistrationComponent } from './registration-component/registration.com
     exports: [],
     declarations: [
       LoginComponent,
-      RegistrationComponent
+      RegistrationComponent,
+      ReadTermsComponent
     ],
     providers: [],
+    entryComponents: [
+      ReadTermsComponent
+    ]
 })
 export class LoginModule { }

@@ -15,6 +15,7 @@ export class RegistrationService implements RegistrationInterface{
 
     usersMock.push(user);
 
+    console.log(usersMock);
     return true;
   }
 
