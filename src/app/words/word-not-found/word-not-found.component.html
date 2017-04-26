@@ -1,3 +1,8 @@
-<h1>{{ 'words.notfound' | translate }}</h1>
-Keresett szó: <a>{{ searched }}</a>
-<p>Kérem próbálja meg a keresett szó szinonímáit!</p>
+<div class="col-5 noPadding WNFMargin">
+    <h1>{{ 'words.notfound' | translate }}</h1>
+    Keresett szó: <a>{{ searched }}</a>
+    <p>Kérem próbálja meg a keresett szó szinonímáját vagy keressen rá az interneten!</p>        
+    <button type="button" class="btn form-control btn-secondary WNFButton" (click)="onRegister()" id="buttonRegistration">
+        Szó keresése az interneten...
+    </button>
+</div>
