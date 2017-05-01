@@ -7,17 +7,29 @@
   <th class="tdb">Módosít</th>
   <th class="tdb">Töröl</th>
   </thead>
-  <tr style="width: 700px "  *ngFor="let us of users">
-    <td>{{us.username}}</td>
-    <td>{{us.email}}</td>
-    <td>{{us.password}}</td>
+  <tr style="width: 700px "  *ngFor="let us of users" >
+
+    <td>
+      <label *ngIf="index !== users.indexOf(us)">{{us.username}}</label>
+      <input value={{us.username}} *ngIf="index==users.indexOf(us)" id="falhasznalomodositas">
+    </td>
+
+    <td>
+      <label *ngIf="index !== users.indexOf(us)">{{us.email}}</label>
+      <input value={{us.email}} *ngIf="index==users.indexOf(us)" id="emailmodositas">
+    </td>
+
+    <td>
+      <label *ngIf="index !== users.indexOf(us)">{{us.password}}</label>
+      <label *ngIf="index==users.indexOf(us)"><input type="checkbox" *ngIf="index==users.indexOf(us)" id="statusmodositas">Letiltás</label>
+    </td>
     <td class="tdb">
-      <button type="button" class="btn1">
+      <button type="button" class="btn1" (click)="ngEdit(us)">
         <i class="material-icons">edit</i>
       </button>
     </td>
     <td class="tdb">
-      <button type="button" class="btn2">
+      <button type="button" class="btn2" (click)="ngdelete(us)">
         <i class="material-icons">delete</i>
       </button>
 
@@ -26,3 +38,6 @@
   </tr>
 
 </table>
+<div class="col-1 offset-md-1 col-xl-3 offset-xl-0" *ngIf="modify==false">
+<button class="btn1" type="submit"  id="buttonSubmit" (click)="ngSave(us)">Módosítások mentése</button>
+</div>
