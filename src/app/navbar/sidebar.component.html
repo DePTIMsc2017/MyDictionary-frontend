@@ -4,7 +4,7 @@
   </button>
   <ul class="nav nav-pills flex-column">
     <li class="nav-item sidebar-navli">
-      <a class="nav-link" [routerLink]="['/']">
+      <a class="nav-link" [routerLink]="['/collections']">
         <span *ngIf="_showIt" id="sidebarMyWords">{{ 'sidebar.my_words' | translate }}</span>
       </a>
     </li>
@@ -26,6 +26,11 @@
     <li class="nav-item sidebar-navli">
       <a class="nav-link"[routerLink]="['/admin/usermanagement']">
         <span *ngIf="_showIt" id="sidebarUsermanagement">{{ 'sidebar.usermanagement' | translate }}</span>
+      </a>
+    </li>
+    <li class="nav-item sidebar-navli">
+      <a class="nav-link"[routerLink]="['/admin/suggestedwords']">
+        <span *ngIf="_showIt" id="sidebarSuggestedWords">{{ 'sidebar.suggested_words' | translate }}</span>
       </a>
     </li>
   </ul>

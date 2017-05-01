@@ -1,0 +1,27 @@
+<div class="card"  (click)="onClick($event)">
+  <div class="card-block clickable">
+    <h4 class="card-title" *ngIf="wordCollection.name.length < 24">{{wordCollection.name}}</h4>
+    <h6 class="card-title extended-margin" *ngIf="wordCollection.name.length >= 24">{{wordCollection.name}}</h6>
+    <div class="card-subtitle mb-2 text-muted d-flex justify-content-between">
+      <div class="d-flex">
+        <!--<img class="profile-img" src="/img/user.png">-->
+        {{wordCollection.name}}
+      </div>
+      <span>
+            {{wordCollection.subject}}<!--{{newsItem.created | datex: 'YYYY-MM-DD hh:mm'}}-->
+      </span>
+      <span>
+            {{wordCollection.size}}<!--{{newsItem.created | datex: 'YYYY-MM-DD hh:mm'}}-->
+      </span>
+    <!--</div>
+    <div class="d-flex justify-content-between">
+      <div class="text-padding">
+        {{ newsItem.descrip+tion | removeMarkdown: 250 | textCompress: textSize }}
+      </div>
+      <mm-checkbox id="mmCheckbox" *ngIf="editable"
+                   [class]="'checkbox-center'"
+                   [ngModel]="actualSelected === newsItem"
+                   (change)="onSelected($event)"></mm-checkbox>-->
+    </div>
+  </div>
+</div>
