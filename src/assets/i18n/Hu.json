@@ -41,7 +41,8 @@
     "exec_lesson": "Gyakorló feladatok",
     "export": "Exportálás",
     "addword": "Szó hozzáadása",
-    "usermanagement":"Felhasználók kezelése"
+    "usermanagement":"Felhasználók kezelése",
+    "suggested_words": "Fordítás ajánlások"
   },
   "users": {
     "welcome": "Felhasználói profil",
@@ -61,7 +62,7 @@
     "welcome": "Szavak felvétele a rendszer adatbázisába",
     "word": "Magyar szó",
     "meaning": "Jelentése",
-    "word_class": "szófaj",
+    "word_class": "Szófaj",
     "noun": "főnév",
     "adjactive": "melléknév",
     "verb": "ige",
@@ -69,5 +70,15 @@
     "+1word": "+1 szó",
     "+5words": "+5 szó",
     "send": "Küldés"
+  },
+  "suggestedWords": {
+    "welcome": "Ájanlott fordítások kezelése",
+    "modify": "Módosít",
+    "delete": "Törlés",
+    "select_all": "Összes kijelölése",
+    "select_none": "Kijelölések törlése",
+    "modify_selected": "Kijelöltek módosítása",
+    "delete_selected": "Kijelöltek törlése",
+    "approval": "Jóváhagyás"
   }
 }

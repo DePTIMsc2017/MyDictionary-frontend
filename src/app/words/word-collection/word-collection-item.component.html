@@ -1,0 +1,18 @@
+<div class="card"  (click)="onClick($event)">
+  <div class="card-block clickable">
+    <h4 class="card-title" *ngIf="wordCollection.name.length < 24">{{wordCollection.name}}</h4>
+    <h6 class="card-title extended-margin" *ngIf="wordCollection.name.length >= 24">{{wordCollection.name}}</h6>
+    <div class="card-subtitle mb-2 text-muted d-flex justify-content-between">
+      <div class="d-flex">
+        {{wordCollection.name}}
+      </div>
+      <span>
+            {{wordCollection.subject}}
+      </span>
+      <span>
+            {{wordCollection.size}}
+      </span>
+
+    </div>
+  </div>
+</div>

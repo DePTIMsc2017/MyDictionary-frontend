@@ -1,8 +1,14 @@
-.WNFMargin {        
+.WNFMargin {
     margin-left: 50px;
 }
 
 .WNFButton {
     white-space: normal;
-    width: 94%
+    width: 94%;
+    margin-bottom: 15px;
+}
+
+.WNFPaddingTop{
+  padding-top: 30px;
+
 }

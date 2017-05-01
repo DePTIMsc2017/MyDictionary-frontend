@@ -5,18 +5,28 @@ import { WordsComponent } from './words.component';
 import { WordNotFoundComponent } from './word-not-found/word-not-found.component';
 import { SharedModule } from '../shared/shared.module';
 import { routing } from './words.routing';
+import {AdminModule} from "../admin/admin.module";
+import {wordCollectionListComponent} from "./word-collection/word-collection-list.component";
+import {wordCollectionItemComponent} from "./word-collection/word-collection-item.component";
+import {CollectionsService} from "./word-collection/Collection.service";
+
 
 @NgModule({
     imports: [
       SharedModule,
-      routing
+      routing,
+      AdminModule
     ],
     exports: [],
     declarations: [
       WordsComponent,
       WordFoundComponent,
-      WordNotFoundComponent
+      WordNotFoundComponent,
+      wordCollectionListComponent,
+      wordCollectionItemComponent
     ],
-    providers: [],
+    providers: [
+      CollectionsService
+    ],
 })
 export class WordsModule { }

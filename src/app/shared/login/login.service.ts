@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { LoginInterface } from './login.interface';
 import { LoginModel } from '../models/login.model';
 import { usersMock } from '../mock/users.mock';

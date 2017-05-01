@@ -7,6 +7,7 @@ import { routing } from './admin.routing';
 import {AddWordComponent} from './add-word/add-word.component';
 import {AddWordPartComponent} from "./add-word/add-word-part/add-word-part";
 import {UserManagementComponent} from "./user-management/user-management.component";
+import {WordSuggestionComponent} from "./word-suggestion/word-suggestion.component";
 
 
 @NgModule({
@@ -14,11 +15,12 @@ import {UserManagementComponent} from "./user-management/user-management.compone
     SharedModule,
     routing
   ],
-  exports: [],
+  exports: [  ],
   declarations: [
     AddWordComponent,
     AddWordPartComponent,
-    UserManagementComponent
+    UserManagementComponent,
+    WordSuggestionComponent
   ],
   providers: [],
 })
