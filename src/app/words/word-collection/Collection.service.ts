@@ -25,49 +25,14 @@ export class CollectionsService {
     this.getCollections();
   }
 
-  /*
-  editNews(item) {
-    _newsMock.push(item);
-    this.getNews();
-  }
-  */
+
 
   deleteCollection(item) {
     collectionsMock.splice(collectionsMock.indexOf(item), 1);
     this.getCollections();
   }
-  /*
-  markAsRead(item, userName) {
-    _newsMock[_newsMock.indexOf(item)].read.push(userName);
-    this.getNews();
-  }
-  */
-  loadMoreNews() {
-    // implement
-  }
 
- /*
-  get helpItems() {
-    return this._helpItems.asObservable();
-  }
 
-  getHelpItems() {
-    this._helpItems.next(_helpMock);
-  }
 
-  addHelp(item) {
-    _helpMock.push(item);
-    this.getNews();
-  }
 
-  editHelp(item) {
-    _helpMock.push(item);
-    this.getNews();
-  }
-
-  deleteHelp(item) {
-    _helpMock.splice(_newsMock.indexOf(item), 1);
-    this.getNews();
-  }
-  */
 }

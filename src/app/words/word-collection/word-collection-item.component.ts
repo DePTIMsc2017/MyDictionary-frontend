@@ -12,28 +12,7 @@ export class wordCollectionItemComponent {
 
   onClick($event) {
     console.log($event);
-    /*
-    if (this.editable) {
-      let canActivate = true;
-      if ($event !== undefined) {
-        $event.path.forEach(item => {
-          if (item.id === 'mmCheckbox') {
-            canActivate = false;
-            return;
-          }
-        });
-      }
 
-      if (canActivate) {
-        this.clicked.emit();
-      }
-    } else {
-      this.clicked.emit();
-    }
-    */
   }
 
-  onSelected(): void {
-    //this.selected.emit();
-  }
 }
