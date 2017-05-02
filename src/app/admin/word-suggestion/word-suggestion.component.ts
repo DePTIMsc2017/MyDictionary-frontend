@@ -33,7 +33,7 @@ export class WordSuggestionComponent implements OnInit {
 
   onDelete(word){
     //console.log(word);
-    //this.words.slice(word,1);
+    //this.words.splice(word);
     this.words = this.words.filter(item => item !== word);
     suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1);
     //console.log(this.words);
@@ -50,8 +50,9 @@ export class WordSuggestionComponent implements OnInit {
       this.selected = this.selected.filter(i => i !== word);
   }
 
-  onSelectedList(){
-    if(this.selected.length === 0)
+  onSelectedList(event){
+    console.log(event);
+    if(event.srcElement.checked === true )
       this.words.forEach(elem => this.selected.push(elem));
     else
       this.selected= [];
