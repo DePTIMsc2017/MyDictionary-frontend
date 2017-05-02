@@ -1,4 +1,4 @@
 export class LoginModel {
-  loginUsername: string;
-  loginPasswd: string;
+  username: string;
+  password: string;
 }
