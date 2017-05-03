@@ -5,6 +5,10 @@
     "back": "Vissza"
   },
   "login": {
+    "user": "Felhasználónév",
+    "pass": "Jelszó",
+    "reg": "Regisztráció",
+    "forgot_pass": "Elfelejtett jelszó",
     "wrong_pass_or_user": "Hibás felhasználónév/jelszó!"
   },
   "navbar": {
