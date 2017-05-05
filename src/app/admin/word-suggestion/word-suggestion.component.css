@@ -1,3 +1,16 @@
+.WPad{
+  padding-left: 16px;
+}
+
+.WMargin{
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+.tableButElem{
+  align-content: center;
+}
+
 .tablehead{
   background-color:rgba(71, 131, 191, 1);
   color: white;
@@ -36,7 +49,10 @@
 
 }
 
-.td{
-  width: 10px;
+.inputWidth{
+  width: 70px;
+}
 
+.inputWidth2{
+  width: 60px;
 }

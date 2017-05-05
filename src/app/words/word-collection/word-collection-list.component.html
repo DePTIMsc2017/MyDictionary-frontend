@@ -1,0 +1,15 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <wordCollection-item *ngFor="let item of collectionsService.collections | async"
+               class="col-md-6 col-xl-4"
+               [wordCollection]="item"
+                >
+    </wordCollection-item>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-center">
+    </div>
+  </div>
+</div>

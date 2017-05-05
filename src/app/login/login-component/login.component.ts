@@ -1,7 +1,9 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { LoginService } from '../../shared/login/login.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LoginModel } from '../../shared/models/login.model';
 
 @Component({
   selector: 'login',
@@ -16,22 +18,30 @@ import { Component, OnInit } from '@angular/core';
     ]
   )]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   private failExpression: string = 'no_fail';
+
+  private sub: Subscription;
 
   constructor(
     private loginService: LoginService,
     private router: Router
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.sub = this.loginService.authenticateError.subscribe(item => {
+      item ? this.failExpression = 'has_fail' : this.failExpression = 'no_fail';
+    });
+  }
 
-  login(user) {
-    if (this.loginService.login(user)) {
-      this.router.navigate(['/']);
-    } else {
-      this.failExpression = 'has_fail';
+  ngOnDestroy(): void {
+    if (this.sub !== undefined) {
+      this.sub.unsubscribe();
     }
+  }
+
+  login(user: LoginModel) {
+    this.loginService.login(user);
   }
 
   onRegister() {

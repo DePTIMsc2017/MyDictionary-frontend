@@ -1,0 +1,64 @@
+<div>
+  <h1 class="WMargin">{{ 'suggestedWords.welcome' | translate }}</h1>
+</div>
+
+<table class="table table-bordered table-hover table-responsive"  >
+
+  <thead class="tablehead" >
+  <th><input type="checkbox" (click)="onSelectedList($event)"></th>
+  <th>#</th>
+  <th>{{ 'addWord.word' | translate }}</th>
+  <th>{{ 'addWord.meaning' | translate }}</th>
+  <th>{{ 'addWord.word_class' | translate }}</th>
+  <th class="tdb">{{ 'suggestedWords.modify' | translate }}</th>
+  <th class="tdb">{{ 'suggestedWords.delete' | translate }}</th>
+  </thead>
+
+
+  <tr   *ngFor="let w of words; let i = index" [ngClass]="{'table-active' : selected.indexOf(w) > -1}">
+    <td><input type="checkbox" name="vehicle" value={{i}} (click)="onSelected(w)" [checked]="selected.indexOf(w) > -1"></td>
+    <td>{{i}}</td>
+    <td>{{w.word}}</td>
+
+    <td>
+      <label  *ngIf="modified.indexOf(w) == -1">{{w.wordMeaning1[0].word}}</label>
+      <input class="inputWidth" ngModel name="birthdate" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordMeaning1[0].word" id="inputModifiedMeaning">
+    </td>
+    <td >
+      <label  *ngIf="modified.indexOf(w) == -1">{{w.wordClass}}</label>
+      <input  class="inputWidth2" ngModel name="birthdate" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordClass" id="inputModifiedWordClass">
+    </td>
+
+    <td class="tdb">
+      <button type="button" class="btn1" (click)="onModify(w)">
+        <i class="material-icons">edit</i>
+      </button>
+    </td>
+    <td class="tdb">
+      <button type="button" class="btn2 tableButElem"  (click)="onDelete(w)">
+        <i class="material-icons">delete</i>
+      </button>
+
+    </td>
+
+  </tr>
+
+</table>
+
+<div class="form-group row">
+  <div class="col-5 col-sm-4 col-md-3 col-xl-2">
+    <button type="button" class="btn tablehead loginButtonMargin" (click)="onModifyAll()" id="plusOne">
+      {{ 'suggestedWords.modify_selected' | translate }}
+    </button>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+    <button type="button" class="btn tablehead loginButtonMargin" (click)="onDeleteAll()" id="plusFive">
+      {{ 'suggestedWords.delete_selected' | translate }}
+    </button>
+  </div>
+  <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+    <button type="button" class="btn tablehead loginButtonMargin" id="buttonSubmitAddWord" (click)="onApprove()">
+      {{ 'suggestedWords.approval' | translate }}
+    </button>
+  </div>
+</div>

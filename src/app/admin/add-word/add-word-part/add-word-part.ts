@@ -39,7 +39,7 @@ export class AddWordPartComponent{
     this.tmp.word = this.word;
     //if (lang == 'En')
      // tmp.wordClass = this.wordclasses[this.wordclass];
-    //else  tmp.wordClass = this.wordclass;
+    this.tmp.wordClass = this.wordclass;
     this.tmp.language.id = 1;
     this.tmp.language.name = 'magyar';
     this.tmp.wordMeaning1[0].id = this.index+ 1;

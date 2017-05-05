@@ -1,8 +1,57 @@
 <div class="col-5 noPadding WNFMargin">
     <h1>{{ 'words.notfound' | translate }}</h1>
     Keresett szó: <a>{{ searched }}</a>
-    <p>Kérem próbálja meg a keresett szó szinonímáját vagy keressen rá az interneten!</p>        
+    <p>Kérem próbálja meg a keresett szó szinonímáját vagy keressen rá az interneten!</p>
     <button type="button" class="btn form-control btn-secondary WNFButton" (click)="onRegister()" id="buttonRegistration">
         Szó keresése az interneten...
     </button>
+    <button type="button" class="btn form-control btn-secondary WNFButton" (click)="onSuggest()" id="giveMeaning">
+        Fordítás ajánlás
+    </button>
 </div>
+
+
+<form *ngIf="suggest" #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm.form.value)">
+<div class="col-12 WNFPaddingTop WNFMargin">
+  <div class="form-group row ">
+    <div class="col-6  col-sm-4 col-md-3 col-xl-1">
+      <label class=" col-form-label">{{ 'addWord.word' | translate }}:</label>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+      <label class=" col-form-label"  id="inputw" >{{ searched }}</label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-6 col-sm-4 col-md-3 col-xl-1">
+      <label class=" col-form-label">{{ 'addWord.meaning' | translate }}:</label>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+      <input ngModel name="meaning"  class="form-control" type="text" [(ngModel)]="meaning">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <div class="col-6 col-sm-4 col-md-3 col-xl-1">
+      <label class=" col-form-label">{{ 'addWord.word_class' | translate }}:</label>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+      <select ngModel name="wordclass"  [(ngModel)]="wordclass">
+        <option>{{ 'addWord.noun' | translate }}</option>
+        <option>{{ 'addWord.adjactive' | translate }}</option>
+        <option>{{ 'addWord.verb' | translate }}</option>
+        <option>{{ 'addWord.adverb' | translate }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group row ">
+    <div class="col-6 col-sm-4 col-md-3 col-xl-1">
+      <button type="submit" class="btn btn-primary loginButtonMargin" id="buttonSubmitAddWord">
+        {{ 'addWord.send' | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+</form>

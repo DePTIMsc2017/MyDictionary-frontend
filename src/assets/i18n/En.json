@@ -45,7 +45,8 @@
     "exec_lesson": "Exercise lessons",
     "export": "Export",
     "addword": "Add Word",
-    "usermanagement":"User management"
+    "usermanagement":"User management",
+    "suggested_words": "Suggested words"
   },
   "users": {
     "welcome": "User Profile",
@@ -73,5 +74,15 @@
     "+1word": "+1 word",
     "+5words": "+5 words",
     "send": "Send"
+  },
+  "suggestedWords": {
+    "welcome": "Suggested words table",
+    "modify": "Modify",
+    "delete": "Delete",
+    "select_all": "Select all",
+    "select_none": "Select none",
+    "modify_selected": "Modify selected rows",
+    "delete_selected": "Delete selected rows",
+    "approval": "Approve"
   }
 }
