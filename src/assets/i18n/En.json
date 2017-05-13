@@ -5,7 +5,11 @@
     "back": "Back"
   },
   "login": {
-    "wrong_pass_or_user": "Wrong User/Pass!"
+    "user": "Username",
+    "pass": "Password",
+    "reg": "Create an account",
+    "forgot_pass": "Forgot password?",
+    "wrong_pass_or_user": "Wrong Username/Password!"
   },
   "navbar": {
     "user_profile": "User Profile",
