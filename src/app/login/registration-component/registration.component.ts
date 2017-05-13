@@ -1,10 +1,13 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ngbDateStructToString } from '../../shared/utils';
 import { RegistrationService } from '../../shared/registration/registration.service';
 import { RegistrationModel } from '../../shared/models/registration.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ReadTermsComponent } from './read-terms.component';
+
+
 
 @Component({
   selector: 'registration',
@@ -26,9 +29,12 @@ export class RegistrationComponent implements OnInit {
   private _errorMessage: string;
 
   constructor(
+  private router: Router,
     private registrationService: RegistrationService,
-    private modal: NgbModal
+  private modal: NgbModal
   ) { }
+
+
 
   ngOnInit() {
     this._passErr = false;
@@ -56,10 +62,12 @@ export class RegistrationComponent implements OnInit {
       this._usrErr = true;
       this._errorMessage = 'Felhasználónév már foglalt!';
       this._failExpression = 'has_fail';
+      this.router.navigate(['/registerdone']);
     }
-  }
 
+  }
   confirm(pswd:any, nickName:any){
+    console.log("lofasz");
     this._passErr = false;
     this._errorMessage = undefined;
     this._failExpression = 'no_fail';
@@ -114,6 +122,6 @@ export class RegistrationComponent implements OnInit {
   }
 
   readTerms() {
-    const ref = this.modal.open(ReadTermsComponent, {size: 'lg'});
-  }
+        const ref = this.modal.open(ReadTermsComponent, {size: 'lg'});
+      }
 }

@@ -3,7 +3,6 @@
 </div>
 
 <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value, registerForm.valid);">
-
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4" [class.has-danger]="_usrErr">
       <label for="nickName">{{ 'register.username' | translate }}: <span class="span-needed">*</span></label>
@@ -37,23 +36,20 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="birthDate">{{ 'register.birthdate' | translate }}</label>
-      <div class="input-group">
-        <input type="text" name="birthDate" class="form-control margin" id="InputBirthDate" placeholder="yyyy-mm-dd"
-               ngbDatepicker #d="ngbDatepicker" ngModel>
-        <span class="input-group-btn">
-          <button class="btn btn-info" type="button" (click)="d.toggle()">
+            <div class="input-group">
+             <input type="text" name="birthDate" class="form-control margin" id="InputBirthDate" placeholder="yyyy-mm-dd" ngbDatepicker #d="ngbDatepicker" ngModel>
+             <span class="input-group-btn">
+               <button class="btn btn-info" type="button" (click)="d.toggle()">
             <i class="material-icons">date_range</i>
-          </button>
-        </span>
-      </div>
-    </div>
+           </button>
+         </span>
+           </div>    </div>
   </div>
 
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <label for="country">{{ 'register.country' | translate }}</label>
-      <input type="text" name="country" class="form-control margin" id="InputCountry" ngModel>
-    </div>
+      <input type="text" name="country" class="form-control margin" id="InputCountry" ngModel>    </div>
   </div>
 
 
@@ -67,9 +63,9 @@
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
       <input type="checkbox" required id="checkboxAccept" name="isLicenseAccepted" ngModel>
-      <label for="accept">{{ 'register.accept' | translate }}
-        <button class="btn btn-sm btn-secondary" (click)="readTerms()">{{ 'register.readTerms' | translate}}</button>
-      </label>
+            <label for="accept">{{ 'register.accept' | translate }}
+              <button class="btn btn-sm btn-secondary" (click)="readTerms()">{{ 'register.readTerms' | translate}}</button>
+           </label>
     </div>
   </div>
 
@@ -89,8 +85,6 @@
 
   <div class="row">
     <div class="col col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-      <button type="submit" class="btn form-control btn-info"
-              id="buttonSubmit" [disabled]="!registerForm.valid">{{ 'navbar.register' | translate }}</button>
-    </div>
+      <button type="submit" class="btn form-control btn-info" id="buttonSubmit" [disabled]="!registerForm.valid">{{ 'navbar.register' | translate }}</button>    </div>
   </div>
 </form>
