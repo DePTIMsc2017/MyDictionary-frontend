@@ -1,0 +1,33 @@
+.playfield {
+    width: 350px;
+}
+
+.letters{
+  margin-right: 5px;
+}
+
+.circle {
+  display: table;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(24, 80, 136, 1);
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.used {
+  background-color: grey;
+  color: black;
+}
+
+.span {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: larger;
+  user-select: none;
+}

@@ -2,9 +2,9 @@ import { RegistrationModel } from '../models/registration.model';
 
 export let usersMock: Array<RegistrationModel> = [
   {
-    username: 'teszt',
+    username: 'Test',
     email: 'teszt@teszt.hu',
-    password: 'teszt',
+    password: 'Test123',
     birthdate: '1990.01.14.',
     country: 'Malaysia',
     city: 'Kuala Lumpur'
@@ -12,7 +12,7 @@ export let usersMock: Array<RegistrationModel> = [
   {
     username: 'admin',
     email: 'admin@admin.hu',
-    password: 'admin',
+    password: 'Test123',
     birthdate: '1994.08.02.',
     country: 'Canada',
     city: 'Montreal'
