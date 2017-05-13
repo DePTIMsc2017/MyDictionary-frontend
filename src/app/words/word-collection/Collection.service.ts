@@ -25,8 +25,6 @@ export class CollectionsService {
     this.getCollections();
   }
 
-
-
   deleteCollection(item) {
     collectionsMock.splice(collectionsMock.indexOf(item), 1);
     this.getCollections();
