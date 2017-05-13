@@ -18,6 +18,7 @@ import { PageNotFoundModule } from './page-not-found/page-not-found.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminModule } from './admin/admin.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PracticeModule} from '../app/words/practice/pratice.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       }
     }),
     routing,
+    PracticeModule,
     PageNotFoundModule
   ],
   providers: [],
