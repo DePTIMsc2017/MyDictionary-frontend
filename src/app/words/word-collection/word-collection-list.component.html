@@ -4,12 +4,22 @@
     <wordCollection-item *ngFor="let item of collectionsService.collections | async"
                class="col-md-6 col-xl-4"
                [wordCollection]="item"
+               (clicked)="onItemClicked(item)"
                 >
     </wordCollection-item>
   </div>
 
-  <div class="row">
-    <div class="col-md-12 text-center">
-    </div>
+  <div >
+    <wordstable *ngIf="col.length > 0"
+                [selectionColumn] = "true"
+                [range] = "true"
+                [name] = "true"
+                [meaning] = "true"
+                [wordClass] = "true"
+                [deleteColumn] = "true"
+                [words] = "col"
+                (Deleted) = "onDelete($event)">
+
+    </wordstable>
   </div>
 </div>

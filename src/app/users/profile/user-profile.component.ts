@@ -28,10 +28,10 @@ export class UserProfileComponent implements OnInit {
     this._passErr = false;
     this._failExpression = 'no_fail';
 
-  let name= JSON.parse(localStorage.getItem('currentUser'));
-
+  let name= sessionStorage.getItem('username');
+  console.log(name);
   this.currentUser = usersMock.filter(data => {
-      return data.username == name.username;
+      return data.username == name;
     });
 
   this.copy(this.tmpUser, this.currentUser[0]);
@@ -116,28 +116,31 @@ export class UserProfileComponent implements OnInit {
 
   onSubmit(values){
 
-    console.log(this.tmpUser);
-
     if(values.oldPswd === this.currentUser[0].password)
     {
       if(this.passwordchange)
       {
-        this.currentUser[0].password = values.newPswd;
+        if(values.newPswd != "")
+          this.currentUser[0].password = values.newPswd;
+        else
+          alert("Nem sikerült a módosítás!");
       }
       else {
-      this.currentUser[0].username = values.username;
-      this.currentUser[0].birthdate = values.birthdate;
-      this.currentUser[0].email = values.email;
-      this.currentUser[0].country = values.country;
-      this.currentUser[0].city = values.city;
-
+        if(values.birthdate != "" && values.email != "" && values.country != "" && values.city !="") {
+          this.currentUser[0].birthdate = values.birthdate;
+          this.currentUser[0].email = values.email;
+          this.currentUser[0].country = values.country;
+          this.currentUser[0].city = values.city;
+        }
+        else
+          alert("Nem sikerült a módosítás!");
       }
 
       alert("Sikeres módosítás!");
     }
     else{
       alert("Nem sikerült a módosítás!");
-    }
+  }
     this.tmpUser = this.currentUser[0];
     this.modify = false;
     this.passwordchange = false;

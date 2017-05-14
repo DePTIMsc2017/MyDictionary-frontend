@@ -1,21 +1,33 @@
-import {Component, OnInit, Input,} from '@angular/core';
-import { suggestedWordsMock, wordsMock } from '../../shared/mock/words.mock';
-import {Word} from "../../shared/models/word.model";
+import {Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
+import { suggestedWordsMock, wordsMock } from '../mock/words.mock';
+import {Word} from "../models/word.model";
 
 @Component({
-  selector: 'wordsuggestion',
-  templateUrl: './word-suggestion.component.html',
-  styleUrls: ['./word-suggestion.component.css']
+  selector: 'wordstable',
+  templateUrl: 'words-table.component.html',
+  styleUrls: ['words-table.component.css']
 })
-export class WordSuggestionComponent implements OnInit {
-  words = suggestedWordsMock;
+export class WordsTableComponent implements OnInit {
+  @Input() selectionColumn: boolean = false;
+  @Input() range: boolean =false;
+  @Input() name: boolean = false;
+  @Input() meaning: boolean = false;
+  @Input() wordClass: boolean = false;
+  @Input() modifyColumn: boolean = false;
+  @Input() deleteColumn: boolean = false;
+  @Input() approve: boolean = false;
+  @Input() words: Array<Word>;
+  @Output() approved = new EventEmitter<any>();
+  @Output() Deleted = new EventEmitter<any>();
+  //words = suggestedWordsMock;
   modified: Word[];
   selected: Word[];
-  constructor() { }
 
   ngOnInit() {
     this.modified = [] ;
     this.selected = [] ;
+    //this.words = new Array();
+    console.log(this.words.toString()+ "ABBA");
   }
 
   onModify(word)
@@ -24,17 +36,17 @@ export class WordSuggestionComponent implements OnInit {
     let v =this.modified.indexOf(word);
     //console.log(v);
     if(v == -1)
-       this.modified.push(word);
+      this.modified.push(word);
     else
-        this.modified = this.modified.filter(i => i !== word);
+      this.modified = this.modified.filter(i => i !== word);
   }
 
   onDelete(word){
-    //console.log(word);
-    //this.words.splice(word);
+
     this.words = this.words.filter(item => item !== word);
-    suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1);
-    //console.log(this.words);
+    let array =[word];
+    console.log(word);
+    this.Deleted.emit({array});
   }
 
   onSelected(word){
@@ -58,16 +70,23 @@ export class WordSuggestionComponent implements OnInit {
 
   onDeleteAll()
   {
+    let array =[];
+    this.words.forEach(word => {
+      if(this.selected.indexOf(word) > -1)
+          array.push(word);
+    });
     this.words = this.words.filter(word => this.selected.indexOf(word) ==-1);
-    this.words.forEach(word => suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1));
+    this.Deleted.emit({array});
   }
 
   onModifyAll()
   {
     this.selected.forEach(word => this.modified.indexOf(word) === -1 ? this.modified.push(word) :
       this.modified.splice(this.modified.indexOf(word),1));
-    this.selected.forEach(index => console.log(index));
-    //console.log(this.modified);
+    //this.selected.forEach(index => console.log(index));
+
+    console.log(this.words + " ABBA");
+    //console.log(this.modifided);
     //console.log(this.selected);
   }
 
@@ -75,7 +94,6 @@ export class WordSuggestionComponent implements OnInit {
     //console.log(this.selected);
     //console.log(this.words);
     //this.words.forEach(we => console.log(we));
-    console.log(wordsMock);
     this.words.forEach(word => {
       if(this.selected.indexOf(word) > -1 && wordsMock.indexOf(word) === -1)
       {
@@ -89,7 +107,6 @@ export class WordSuggestionComponent implements OnInit {
     });
     this.selected.forEach(word => suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1));
     this.selected = [];
-    console.log(wordsMock);
   }
 
 }
