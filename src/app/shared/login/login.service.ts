@@ -24,8 +24,8 @@ export class LoginService implements LoginInterface {
 
     this.http.post(endpoints.AUTHENTICATE, user, headers)
       .subscribe(data => {
-        sessionStorage.setItem('token', data.headers.get('X-AUTH-TOKEN'));
-        sessionStorage.setItem('username', user.username);
+        sessionStorage.setItem('id-token', data.headers.get('X-AUTH-TOKEN'));
+        sessionStorage.setItem('currentUser', user.username);
         this._loggedIn.next(true);
         this._authenticateError.next(false);
         this.router.navigate(['/'])
@@ -37,17 +37,17 @@ export class LoginService implements LoginInterface {
   }
 
   logout(): void {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('id-token');
+    sessionStorage.removeItem('currentUser');
     this.router.navigate(['/']);
   }
 
   isLoggedIn(): boolean {
-    return tokenNotExpired('id-token', sessionStorage.getItem('token'));
+    return tokenNotExpired('id-token', sessionStorage.getItem('id-token'));
   }
 
   getActualUser(): string {
-    return sessionStorage.getItem('username');
+    return sessionStorage.getItem('currentUser');
   }
 
   get authenticateError() {
