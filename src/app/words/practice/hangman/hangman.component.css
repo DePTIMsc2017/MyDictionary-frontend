@@ -1,20 +1,84 @@
 .playfield {
-    width: 350px;
+  display: block;
+  overflow: hidden;
+}
+
+h1{
+  padding-bottom: 20px;
+  color: #656464;
 }
 
 .letters{
   margin-right: 5px;
 }
 
+.letterbox{
+  padding: 20px;
+  max-width: 400px;
+  display: block;
+  overflow: hidden;
+  float: left;
+}
+
+.letter-space{
+  font-size: 38px;
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.select-box{
+  min-height: 36px;
+  padding: 8px;
+  background-color: rgba(24, 80, 136, 1);
+  color: #ffffff;
+}
+
+.imgbox{
+  display: block;
+  overflow: hidden;
+  max-width: 500px;
+  float: left;
+  margin-right: 40px;
+}
+
+.button-row button{
+  margin-top: 20px;
+ /* background-color: #f3f3f3;
+  color: #0275d8;
+  -webkit-box-shadow: 7px 8px 5px -4px rgba(132,132,176,1);
+  -moz-box-shadow: 7px 8px 5px -4px rgba(132,132,176,1);
+  box-shadow: 7px 8px 5px -4px rgba(132,132,176,1);*/
+  background-color: rgba(24, 80, 136, 1);
+  color: #ffffff;
+}
+
 .circle {
-  display: table;
+ /* float: left;
   width: 40px;
   height: 40px;
   background-color: rgba(24, 80, 136, 1);
   color: white;
   border-radius: 20px;
-  text-align: center;
+  text-align: center;*/
+
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: rgba(24, 80, 136, 1);
+  color: white;
+  border-radius: 100%;
+  text-align: right;
+  float: left;
 }
+
+.circle .span{
+  text-align: center;
+  display: block;
+  padding-top: 4px;
+}
+
+
 
 .clickable {
   cursor: pointer;
@@ -30,4 +94,9 @@
   vertical-align: middle;
   font-size: larger;
   user-select: none;
+}
+
+
+.imgdiv{
+  padding: 30px;
 }

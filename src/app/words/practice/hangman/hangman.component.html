@@ -1,12 +1,10 @@
 <h1>Szavak gyakorlása</h1>
 
 <div class="form-group row">
-  <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-    <label class=" col-form-label">Válaszd ki a gyakorolni kívánt szócsoportot!</label>
-  </div>
-  <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-    <select (change)="OnChanged($event.target.value)">
-      <option disabled selected value> -- select an option --</option>
+
+  <div class="col-12">
+    <select class="select-box" (change)="OnChanged($event.target.value)">
+      <option disabled selected value> Válassz szócsoportot!</option>
       <option *ngFor="let collection of collectionsService.collections | async" value={{collection.id}}>{{
         collection.name }}
       </option>
@@ -16,34 +14,37 @@
 
 <div class="playfield">
 
-  <div>
+  <div class="imgbox">
     <img src="{{imgURL}}"/>
   </div>
 
-  <div class="row">
-    <span *ngFor="let letter of Letters" class="letters">{{letter}}</span>
-  </div>
-  <div class="row">
+
+  <div class="letterbox">
+    <div class="error-box">
+      {{message}}
+    </div>
+    <div class="letter-space">
+      <span *ngFor="let letter of Letters" class="letters">{{letter}}</span>
+    </div>
     <div
       [ngClass]="{circle: true, clickable: UsedLetters.indexOf(alpha) == -1 && word != null, used: UsedLetters.indexOf(alpha) > -1}"
       *ngFor="let alpha of AlphaBet" (click)="OnSelect(alpha)"><span class="span">{{alpha}}</span></div>
   </div>
 
-  <div>
-    {{message}}
-  </div>
+</div>
 
-  <div class="form-group row">
-    <div class="col-5 col-sm-4 col-md-3 col-xl-2">
+<div class="row button-row">
+  <div class="form-group">
+    <div class="col-4">
       <button type="button" class="btn loginButtonMargin" (click)="OnNextWord()">
         Újat kérek
       </button>
     </div>
   </div>
-  <div class="form-group row">
-    <div class="col-5 col-sm-4 col-md-3 col-xl-2">
+  <div class="form-group">
+    <div class="col-4">
       <button type="button" class="btn loginButtonMargin" (click)="onAgainCollection()">
-        A szócsoport gyakorlásának megismétlése
+        Ismétlés
       </button>
     </div>
   </div>
