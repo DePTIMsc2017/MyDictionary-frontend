@@ -4,5 +4,6 @@ export default {
   AUTHENTICATE: BASE_PATH + '/authenticate',
 
   // WORDS
-  SEARCH: BASE_PATH + '/words/search'
+  SEARCH: BASE_PATH + '/words/search',
+  ADDWORD: BASE_PATH + '/addword'
 }

@@ -31,8 +31,8 @@ export class WordNotFoundComponent implements OnInit {
     let existWord = suggestedWordsMock.filter(w => {
       return w.word === tmp.word;
     });
-     if(existWord.length == 0)
-          suggestedWordsMock.push(this.addwordcomponent.toModelWord());
+     //if(existWord.length == 0)
+          //suggestedWordsMock.push(this.addwordcomponent.toModelWord());
     //console.log(suggestedWordsMock);
     //console.log(wordsMock);
   }
