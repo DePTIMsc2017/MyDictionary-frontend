@@ -17,8 +17,10 @@
                 [meaning] = "true"
                 [wordClass] = "true"
                 [deleteColumn] = "true"
+                [approve]="true"
                 [words] = "col"
-                (Deleted) = "onDelete($event)">
+                (Deleted) = "onDelete($event)"
+                (approved)="onApproved($event)">
 
     </wordstable>
   </div>

@@ -39,5 +39,10 @@ export class wordCollectionListComponent implements OnInit {
     words.array.forEach(word => this.collectionsService.deleteWord(word.id));
   }
 
+  onApproved(words)
+  {
+    console.log(words);
+
+  }
 
 }
