@@ -22,8 +22,6 @@ export class wordCollectionListComponent implements OnInit {
 
   }
 
-
-
   onItemClicked(item) {
     console.log(item);
 
