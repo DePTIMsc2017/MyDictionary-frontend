@@ -6,5 +6,4 @@ export class Word {
   wordClass: string;
   language: Language;
   wordMeaning1?: Array<Word>;
-  wordMeaning2?: Array<Word>;
 }

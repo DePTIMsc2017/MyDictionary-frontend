@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WordsService } from '../shared/words/words.service';
@@ -26,9 +27,11 @@ export class WordsComponent implements OnInit {
     this.activatedRoute.queryParams.subscribe(
       param => {
         this._searchedWord = param['word'];
-        this._foundWords = this.wordService.search(param['word'], '', '');
-        this._wordsFound = this._foundWords.length > 0;
-        console.log(this._foundWords);
+        this.wordService.search(param['word'])
+          .subscribe(data => {
+            this._foundWords = data;
+            this._wordsFound = data.length > 0;
+          });
       }
     );
   }

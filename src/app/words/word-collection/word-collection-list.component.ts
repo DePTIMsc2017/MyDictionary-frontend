@@ -26,8 +26,6 @@ export class wordCollectionListComponent implements OnInit {
     this.col = new Array();
   }
 
-
-
   onItemClicked(item) {
     //console.log(item);
     this.col =  this.collectionsService.getWords(item);
