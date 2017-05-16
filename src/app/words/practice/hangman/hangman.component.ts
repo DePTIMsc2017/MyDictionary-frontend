@@ -15,20 +15,20 @@ export class HangmanComponent implements OnInit {
   AllIDS: Array<number> = new Array();
   word: string;
   Faults=0;
-  imUrlBase = 'src/app/words/practice/hangman/src/';
+  imUrlBase = './assets/hangman/';
   message = "";
   constructor(private collectionsService: CollectionsService) { }
 
   ngOnInit() {
     this.collectionsService.getCollections();
-    this.imgURL = 'src/app/words/practice/hangman/src/10.png';
+    this.imgURL = './assets/hangman/10.png';
   }
 
   OnChanged(id){
     this.SetDefeault();
     this.UsedIDs.splice(0, this.UsedIDs.length);
     this.AllIDS = this.collectionsService.getIDs(id);
-    this.imgURL = 'src/app/words/practice/hangman/src/0.png';
+    this.imgURL = './assets/hangman/0.png';
     this.word = this.collectionsService.getWord(this.GetRandId());
     console.log(this.word);
     for(let i = 0;i<this.word.length; i++)
@@ -89,14 +89,14 @@ export class HangmanComponent implements OnInit {
     this.Letters.splice(0,this.Letters.length);
     this.UsedLetters.splice(0, this.UsedLetters.length);
     this.Faults = 0;
-    this.imgURL = 'src/app/words/practice/hangman/src/0.png';
+    this.imgURL = './assets/hangman/0.png';
     this.word = undefined;
   }
 
   onAgainCollection(){
     this.SetDefeault();
     this.UsedIDs.splice(0, this.UsedIDs.length);
-    this.imgURL = 'src/app/words/practice/hangman/src/0.png';
+    this.imgURL = './assets/hangman/0.png';
     this.OnNextWord();
   }
 }
