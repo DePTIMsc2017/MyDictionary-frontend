@@ -4,6 +4,7 @@ import {collectionsMock} from "../../shared/mock/collection.mock";
 import { wordsMock} from "../../shared/mock/words.mock";
 import { Word} from "../../shared/models/word.model";
 import { collectionListMock } from "../../shared/mock/collection-list.mock";
+import {Collection} from "../../shared/models/collection.model";
 
 @Injectable()
 export class CollectionsService {
@@ -97,4 +98,21 @@ export class CollectionsService {
     return w.wordMeaning1[0].word;
   }
 
+  getLastColId()
+  {
+    let LastID =-1;
+    this.collections.forEach(col => LastID < col[col.length-1] ? LastID = col[col.length-1] : LastID);
+    return LastID;
+  }
+
+  createCollection(name:string, description:string)
+  {
+    let col = new Collection();
+    col.id = this.getLastColId()+1;
+    col.name= name;
+    col.subject = description;
+    col.size=0;
+
+    this.addCollection(col);
+  }
 }

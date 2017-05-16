@@ -10,6 +10,7 @@ import { RegistrationService } from './registration/registration.service';
 import { WordsService } from './words/words.service';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {WordsTableComponent} from "./words-table/words.table.component";
 
 export function MDHttpServiceFactory(http: Http, options: RequestOptions, loginService: LoginService) {
   return new MDHTTP(new AuthConfig({
@@ -28,9 +29,11 @@ export function MDHttpServiceFactory(http: Http, options: RequestOptions, loginS
       CommonModule,
       TranslateModule,
       FormsModule,
-      NgbModule
+      NgbModule,
+      WordsTableComponent
     ],
     declarations: [
+      WordsTableComponent
     ],
     providers: [
       AuthGuardService,

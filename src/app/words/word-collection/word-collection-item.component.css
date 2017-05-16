@@ -72,3 +72,15 @@
   background-position: right bottom;
   background-color: #ffffff;
 }
+
+.plusCard{
+  border: 1px solid rgba(98, 86, 162, 0.12);
+  border-radius: 1.25rem;
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
+  box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
+  background-image: url('plus.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-color: #ffffff;
+}
