@@ -11,7 +11,7 @@ import { WordsService } from './words/words.service';
 import { AuthGuardService } from './guards/auth-guard.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-function MDHttpServiceFactory(http: Http, options: RequestOptions, loginService: LoginService) {
+export function MDHttpServiceFactory(http: Http, options: RequestOptions, loginService: LoginService) {
   return new MDHTTP(new AuthConfig({
     tokenGetter: (() => sessionStorage.getItem('id-token')),
     globalHeaders: [{ 'Content-Type': 'application/json' }]
