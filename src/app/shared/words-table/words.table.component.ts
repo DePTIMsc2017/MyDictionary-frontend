@@ -13,28 +13,29 @@ export class WordsTableComponent implements OnInit {
   @Input() name: boolean = false;
   @Input() meaning: boolean = false;
   @Input() wordClass: boolean = false;
-  @Input() modifyColumn: boolean = false;
   @Input() deleteColumn: boolean = false;
   @Input() approve: boolean = false;
   @Input() words: Array<Word>;
   @Output() approved = new EventEmitter<any>();
   @Output() Deleted = new EventEmitter<any>();
-  //words = suggestedWordsMock;
   modified: Word[];
+  Allmodified: Word[];
   selected: Word[];
+  own: Word[];
 
   ngOnInit() {
     this.modified = [] ;
     this.selected = [] ;
-    //this.words = new Array();
+    this.Allmodified = [];
+    this.own = this.words.slice();
     console.log(this.words.toString()+ "ABBA");
   }
 
   onModify(word)
   {
-    //console.log(word);
+    if(this.Allmodified.indexOf(word) === -1)
+      this.Allmodified.push(word);
     let v =this.modified.indexOf(word);
-    //console.log(v);
     if(v == -1)
       this.modified.push(word);
     else
@@ -81,8 +82,12 @@ export class WordsTableComponent implements OnInit {
 
   onModifyAll()
   {
-    this.selected.forEach(word => this.modified.indexOf(word) === -1 ? this.modified.push(word) :
-      this.modified.splice(this.modified.indexOf(word),1));
+    this.selected.forEach(word =>{
+      if(this.modified.indexOf(word) === -1) {
+        this.modified.push(word);
+        this.Allmodified.push(word);
+      }});
+    //this.modified.splice(this.modified.indexOf(word),1));
     //this.selected.forEach(index => console.log(index));
 
     console.log(this.words + " ABBA");
@@ -91,14 +96,17 @@ export class WordsTableComponent implements OnInit {
   }
 
   onApprove(){
-    //console.log(this.selected);
-    //console.log(this.words);
+
+    this.own.forEach(we => console.log(we));
     //this.words.forEach(we => console.log(we));
+    /*
+    let array: Word[];
     this.words.forEach(word => {
       if(this.selected.indexOf(word) > -1 && wordsMock.indexOf(word) === -1)
       {
         //console.log((word.id-1)/2);
-        wordsMock.push(word);
+        //wordsMock.push(word);
+        array.push(word);
         this.words = this.words.filter(item => item !== word);
         //console.log("ABBA");
       }
@@ -107,6 +115,8 @@ export class WordsTableComponent implements OnInit {
     });
     this.selected.forEach(word => suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1));
     this.selected = [];
+    this.approved.emit(array);
+    */
   }
 
 }

@@ -20,10 +20,12 @@ export class UserProfileComponent implements OnInit {
   passwordchange = false;
   tmpUser = {};
   currentUser;
+  validPswd :boolean = true;
 
   private _failExpression: string;
   private _passErr: boolean;
   private _errorMessage: string;
+
   constructor() {
     this._passErr = false;
     this._failExpression = 'no_fail';
@@ -53,6 +55,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   onChangeMod(Loginform){
+    this.validPswd = true;
     console.log(Loginform);
     console.log(Loginform.form.controls.username);
     //Loginform.form.controls['username'].setValue(this.actualUser['username']);
@@ -61,45 +64,47 @@ export class UserProfileComponent implements OnInit {
   }
 
   onPasswordChangeMod(){
+    this.validPswd = false;
     this.passwordchange=!this.passwordchange;
     this.modify = false;
   }
 
-  confirm(pswd:any, nickName:any){
+  confirm(pswd:any, pswdA:any, nickName:any){
     this._passErr = false;
     this._errorMessage = undefined;
     this._failExpression = 'no_fail';
+    let result = this.checkPswd(pswd, nickName);
     console.log(pswd);
+    if( result !== 'OK')
+    {
+      this._passErr = true;
+      this._errorMessage = result;
+      this._failExpression = 'has_fail';
+      this.validPswd = false;
+    }
+    else if(pswdA != undefined) { this.validPswd = false;}
+    else { this.validPswd = true;}
+
+    console.log("AAABBB "+pswd+"  "+pswdA);
+
+  }
+
+  checkPswd(pswd:any, nickName:any){
     if (pswd===""){
-      this._passErr = true;
-      this._errorMessage = 'register.empty';
-      this._failExpression = 'has_fail';
-      return;}
+      return 'register.empty';}
     if(pswd.length<5){
-      this._passErr = true;
-      this._errorMessage = 'register.length';
-      this._failExpression = 'has_fail';
-      return;}
+      return 'register.length';}
 
     if(!/^\w*$/.test(pswd)){
-      this._passErr = true;
-      this._errorMessage = 'register.justalphanum';
-      this._failExpression = 'has_fail';
-      return;
+      return 'register.justalphanum';
     }
     if(pswd===nickName){
-      this._passErr = true;
-      this._errorMessage = 'register.same';
-      this._failExpression = 'has_fail';
-      return;
+      return 'register.same';
     }
     if(!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/.test(pswd) ){
-      this._passErr = true;
-      this._errorMessage = 'register.alphanum';
-      this._failExpression = 'has_fail';
-      return;
+      return 'register.alphanum';
     }
-
+    return 'OK';
   }
 
 
@@ -108,8 +113,10 @@ export class UserProfileComponent implements OnInit {
       this._passErr = true;
       this._errorMessage = 'register.notsame';
       this._failExpression = 'has_fail';
+      this.validPswd = false;
       return;
     }
+    else {this.validPswd = true;}
 
   }
 
@@ -120,8 +127,10 @@ export class UserProfileComponent implements OnInit {
     {
       if(this.passwordchange)
       {
-        if(values.newPswd != "")
+        if( this.checkPswd(values.newPswd, this.currentUser[0].username) == 'OK') {
           this.currentUser[0].password = values.newPswd;
+          alert("Sikeres módosítás!");
+        }
         else
           alert("Nem sikerült a módosítás!");
       }
@@ -131,17 +140,16 @@ export class UserProfileComponent implements OnInit {
           this.currentUser[0].email = values.email;
           this.currentUser[0].country = values.country;
           this.currentUser[0].city = values.city;
+          alert("Sikeres módosítás!");
         }
         else
           alert("Nem sikerült a módosítás!");
       }
-
-      alert("Sikeres módosítás!");
     }
     else{
       alert("Nem sikerült a módosítás!");
   }
-    this.tmpUser = this.currentUser[0];
+    this.tmpUser = Object.assign({}, this.currentUser[0]); //this.currentUser[0].;
     this.modify = false;
     this.passwordchange = false;
     this._passErr = false;

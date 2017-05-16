@@ -8,7 +8,7 @@ import {Word} from "../../shared/models/word.model";
   styleUrls: ['./word-suggestion.component.css']
 })
 export class WordSuggestionComponent implements OnInit {
-  words = suggestedWordsMock;
+  words = suggestedWordsMock.slice();
   modified: Word[];
   selected: Word[];
   constructor() { }
@@ -65,7 +65,8 @@ export class WordSuggestionComponent implements OnInit {
   onModifyAll()
   {
     this.selected.forEach(word => this.modified.indexOf(word) === -1 ? this.modified.push(word) :
-      this.modified.splice(this.modified.indexOf(word),1));
+      //this.modified.splice(this.modified.indexOf(word),1));
+    word);
     this.selected.forEach(index => console.log(index));
     //console.log(this.modified);
     //console.log(this.selected);
@@ -80,6 +81,7 @@ export class WordSuggestionComponent implements OnInit {
       if(this.selected.indexOf(word) > -1 && wordsMock.indexOf(word) === -1)
       {
         //console.log((word.id-1)/2);
+        console.log(word);
         wordsMock.push(word);
         this.words = this.words.filter(item => item !== word);
         //console.log("ABBA");

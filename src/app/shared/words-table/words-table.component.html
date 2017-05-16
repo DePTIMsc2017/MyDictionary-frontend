@@ -6,7 +6,7 @@
   <th *ngIf="name">{{ 'addWord.word' | translate }}</th>
   <th *ngIf="meaning">{{ 'addWord.meaning' | translate }}</th>
   <th *ngIf="wordClass">{{ 'addWord.word_class' | translate }}</th>
-  <th *ngIf="modifyColumn" class="tdb">{{ 'suggestedWords.modify' | translate }}</th>
+  <th *ngIf="approve" class="tdb">{{ 'suggestedWords.modify' | translate }}</th>
   <th *ngIf="deleteColumn" class="tdb">{{ 'suggestedWords.delete' | translate }}</th>
   </thead>
 
@@ -18,14 +18,14 @@
 
     <td *ngIf="meaning">
       <label  *ngIf="modified.indexOf(w) == -1">{{w.wordMeaning1[0].word}}</label>
-      <input class="inputWidth" ngModel name="birthdate" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordMeaning1[0].word" id="inputModifiedMeaning">
+      <input class="inputWidth" ngModel name="vmi" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordMeaning1[0]['word']" id="inputModifiedMeaning">
     </td>
     <td *ngIf="wordClass">
       <label  *ngIf="modified.indexOf(w) == -1">{{w.wordClass}}</label>
-      <input  class="inputWidth2" ngModel name="birthdate" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordClass" id="inputModifiedWordClass">
+      <input  class="inputWidth2" ngModel name="birthdate" *ngIf="modified.indexOf(w) > -1" type="text"  [(ngModel)]="w.wordClass"  id="inputModifiedWordClass">
     </td>
 
-    <td *ngIf="modifyColumn" class="tdb">
+    <td *ngIf="approve" class="tdb">
       <button type="button" class="btn1" (click)="onModify(w)">
         <i class="material-icons">edit</i>
       </button>
@@ -41,9 +41,9 @@
 
 </table>
 
-<div *ngIf="modifyColumn || deleteColumn || approve"  class="form-group row" >
+<div *ngIf=" deleteColumn || approve"  class="form-group row" >
   <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-    <button *ngIf="modifyColumn" type="button" class="btn tablehead loginButtonMargin" (click)="onModifyAll()" id="plusOne">
+    <button *ngIf="approve" type="button" class="btn tablehead loginButtonMargin" (click)="onModifyAll()" id="plusOne">
       {{ 'suggestedWords.modify_selected' | translate }}
     </button>
   </div>

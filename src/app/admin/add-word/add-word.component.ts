@@ -1,3 +1,5 @@
+import { AddWordModel } from './../../shared/models/add-word.model';
+import { WordsService } from './../../shared/words/words.service';
 /**
  * Created by Burai Péter on 2017. 04. 08..
  */
@@ -17,7 +19,7 @@ export class AddWordComponent  {
   @ViewChildren(AddWordPartComponent) addWordPartComponentItems: QueryList<AddWordPartComponent>;
   items=[];
 
-  constructor() {
+  constructor(private wordService: WordsService) {
     this.items.push(wordsMock.length*2+1);
   }
 
@@ -30,10 +32,8 @@ export class AddWordComponent  {
 
   onSubmit(){
     Observable.from(this.addWordPartComponentItems.toArray())
-      .map(item => item.toModelWord())
-      .subscribe(data =>
-        wordsMock.push(data)
-      );
-
+      .filter(item => !item.isEmpty())
+      .map(item => item.toModelWord()).toArray()
+      .subscribe((array: Array<AddWordModel>) => this.wordService.addWordList(array));
   }
 }

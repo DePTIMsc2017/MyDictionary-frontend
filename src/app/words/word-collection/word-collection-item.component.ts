@@ -7,13 +7,17 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 })
 export class wordCollectionItemComponent {
   @Input() wordCollection;
+  @Input() pluscard: boolean=false;
   @Output() clicked = new EventEmitter<any>();
+  @Output() plusClicked = new EventEmitter<any>();
 
   constructor() {}
 
   onClick($event) {
     console.log($event);
-    this.clicked.emit();
+    if($event === -1)
+      this.plusClicked.emit();
+    else this.clicked.emit();
   }
 
 

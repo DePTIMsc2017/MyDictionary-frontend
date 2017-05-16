@@ -1,3 +1,4 @@
+import { AddWordModel } from './../../../shared/models/add-word.model';
 import { Component , Input} from '@angular/core';
 import { Word } from "../../../shared/models/word.model";
 import { Language } from "../../../shared/models/language.model";
@@ -12,12 +13,8 @@ export class AddWordPartComponent{
   word = '';
   meaning = '';
   wordclass = 'főnév';
-  tmp = new Word();
 
   constructor() {
-      this.tmp.language = new Language();
-    this.tmp.wordMeaning1 = [new Word()];
-      this.tmp.wordMeaning1[0].language = new Language();
   }
 
   private wordclasses = [{
@@ -31,23 +28,14 @@ export class AddWordPartComponent{
     return { word: this.word, meaning: this.meaning, wordclass: this.wordclass};
   }
 
-  toModelWord() {
+  toModelWord(): AddWordModel {
+    let temp = new AddWordModel();
 
-    let wc = "addWord." + this.wordclass;
-    //const lang = localStorage.getItem('md-lang');
-    this.tmp.id = this.index;
-    this.tmp.word = this.word;
-    //if (lang == 'En')
-     // tmp.wordClass = this.wordclasses[this.wordclass];
-    this.tmp.wordClass = this.wordclass;
-    this.tmp.language.id = 1;
-    this.tmp.language.name = 'magyar';
-    this.tmp.wordMeaning1[0].id = this.index+ 1;
-    this.tmp.wordMeaning1[0].word = this.meaning;
-    this.tmp.wordMeaning1[0].wordClass = this.tmp.wordClass;
-    this.tmp.wordMeaning1[0].language.id = 2;
-    this.tmp.wordMeaning1[0].language.name = 'angol';
-    return this.tmp;
+    temp.wordHun = this.word;
+    temp.word = this.meaning;
+    temp.wordClass = this.wordclass;
+
+    return temp;
 
   }
 
@@ -55,5 +43,8 @@ export class AddWordPartComponent{
     return this.index;
   }
 
+  isEmpty(): boolean {
+    return this.word === '' && this.meaning === '';
+  }
 
 }

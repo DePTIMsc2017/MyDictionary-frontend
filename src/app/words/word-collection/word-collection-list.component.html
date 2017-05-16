@@ -1,10 +1,15 @@
 <div class="container-fluid">
 
   <div class="row">
+    <wordCollection-item class="col-md-6 col-xl-4"
+                         (plusClicked)="onPlusCard()"
+                         [pluscard]="true">
+    </wordCollection-item>
     <wordCollection-item *ngFor="let item of collectionsService.collections | async"
                class="col-md-6 col-xl-4"
                [wordCollection]="item"
                (clicked)="onItemClicked(item)"
+               [pluscard]="false"
                 >
     </wordCollection-item>
   </div>
@@ -17,10 +22,8 @@
                 [meaning] = "true"
                 [wordClass] = "true"
                 [deleteColumn] = "true"
-                [approve]="true"
                 [words] = "col"
-                (Deleted) = "onDelete($event)"
-                (approved)="onApproved($event)">
+                (Deleted) = "onDelete($event)">
 
     </wordstable>
   </div>

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CollectionsService} from './Collection.service';
-
-
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Router} from "@angular/router";
 import {Word} from "../../shared/models/word.model";
-
+import {CreateWordCollectionComponent} from "./word-collection-create.component";
 
 @Component({
   selector: 'wordCollection-list',
@@ -15,7 +12,6 @@ export class wordCollectionListComponent implements OnInit {
   col: Array<Word>;
 
   constructor(
-    private router: Router,
     private modalService: NgbModal,
     private collectionsService: CollectionsService,
   ) {
@@ -29,7 +25,7 @@ export class wordCollectionListComponent implements OnInit {
   onItemClicked(item) {
     //console.log(item);
     this.col =  this.collectionsService.getWords(item);
-    //console.log(this.col);
+    console.log(this.col);
   }
 
   onDelete(words){
@@ -41,6 +37,11 @@ export class wordCollectionListComponent implements OnInit {
   {
     console.log(words);
 
+  }
+
+  onPlusCard(){
+    console.log("Plus card!");
+    const ref = this.modalService.open(CreateWordCollectionComponent, {size: 'lg'});
   }
 
 }
