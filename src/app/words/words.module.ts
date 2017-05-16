@@ -9,6 +9,7 @@ import {AdminModule} from "../admin/admin.module";
 import {wordCollectionListComponent} from "./word-collection/word-collection-list.component";
 import {wordCollectionItemComponent} from "./word-collection/word-collection-item.component";
 import {CollectionsService} from "./word-collection/Collection.service";
+import {CreateWordCollectionComponent} from "./word-collection/word-collection-create.component";
 
 
 @NgModule({
@@ -23,10 +24,14 @@ import {CollectionsService} from "./word-collection/Collection.service";
       WordFoundComponent,
       WordNotFoundComponent,
       wordCollectionListComponent,
-      wordCollectionItemComponent
+      wordCollectionItemComponent,
+      CreateWordCollectionComponent
     ],
     providers: [
       CollectionsService
     ],
+    entryComponents: [
+      CreateWordCollectionComponent
+    ]
 })
 export class WordsModule { }

@@ -8,14 +8,12 @@ import {Word} from "../../shared/models/word.model";
   styleUrls: ['./word-suggestion.component.css']
 })
 export class WordSuggestionComponent implements OnInit {
-  words = suggestedWordsMock;
-  modify: boolean;
+  words = suggestedWordsMock.slice();
   modified: Word[];
   selected: Word[];
   constructor() { }
 
   ngOnInit() {
-    this.modify = false;
     this.modified = [] ;
     this.selected = [] ;
   }
@@ -67,7 +65,8 @@ export class WordSuggestionComponent implements OnInit {
   onModifyAll()
   {
     this.selected.forEach(word => this.modified.indexOf(word) === -1 ? this.modified.push(word) :
-      this.modified.splice(this.modified.indexOf(word),1));
+      //this.modified.splice(this.modified.indexOf(word),1));
+    word);
     this.selected.forEach(index => console.log(index));
     //console.log(this.modified);
     //console.log(this.selected);
@@ -77,10 +76,12 @@ export class WordSuggestionComponent implements OnInit {
     //console.log(this.selected);
     //console.log(this.words);
     //this.words.forEach(we => console.log(we));
+    console.log(wordsMock);
     this.words.forEach(word => {
       if(this.selected.indexOf(word) > -1 && wordsMock.indexOf(word) === -1)
       {
         //console.log((word.id-1)/2);
+        console.log(word);
         wordsMock.push(word);
         this.words = this.words.filter(item => item !== word);
         //console.log("ABBA");
@@ -90,6 +91,7 @@ export class WordSuggestionComponent implements OnInit {
     });
     this.selected.forEach(word => suggestedWordsMock.splice(suggestedWordsMock.indexOf(word),1));
     this.selected = [];
+    console.log(wordsMock);
   }
 
 }

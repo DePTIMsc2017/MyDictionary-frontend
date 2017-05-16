@@ -70,7 +70,7 @@
           <label class=" col-form-label">{{ 'users.new_password' | translate }}:</label>
         </div>
         <div class="col-6 col-sm-4 col-md-3 col-xl-2" >
-          <input type="password" ngModel name="newPswd" class="form-control" id="inputNewPassword" (blur)="confirm(profileForm.form.value.newPswd, profileForm.form.value.username)">
+          <input type="password" ngModel name="newPswd" class="form-control" id="inputNewPassword" (blur)="confirm(profileForm.form.value.newPswd,profileForm.form.value.newPswdA, profileForm.form.value.username)">
         </div>
       </div>
 
@@ -93,7 +93,7 @@
           <input type="password" ngModel name="oldPswd" class="form-control" id="inputOldPassword">
         </div>
         <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <button type="submit" class="btn form-control btn-primary loginButtonMargin" id="buttonSubmit">
+          <button type="submit" class="btn form-control btn-primary loginButtonMargin" id="buttonSubmit" [disabled]="!validPswd">
             {{'users.confirm'  | translate}}
           </button>
         </div>

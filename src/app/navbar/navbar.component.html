@@ -28,7 +28,7 @@
           <i class="material-icons">account_circle</i> {{ loginService.getActualUser() }}
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" [routerLink]="['profile']" id="navbarProfile"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
+          <a class="dropdown-item" [routerLink]="['/profile']" id="navbarProfile"><i class="fa fa-user fa-fw"></i> {{ 'navbar.user_profile' | translate }}</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" [routerLink]="['/']" (click)="loginService.logout()" id="navbarLogout">
             <i class="fa fa-sign-out fa-fw"></i> {{ 'navbar.logout' | translate }}
