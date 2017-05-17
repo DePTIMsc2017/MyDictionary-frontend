@@ -16,11 +16,6 @@
   display: block;
 }
 
-.card {
-  margin-bottom: 3vh;
-  min-height: 200px;
-}
-
 .extended-margin {
   margin-bottom: 1.3rem;
 }
@@ -64,23 +59,28 @@
 .card{
   border: 1px solid rgba(98, 86, 162, 0.12);
   border-radius: 1.25rem;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
-  box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
+  box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   background-image: url('books.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: #ffffff;
+  margin-bottom: 3vh;
+  min-height: 200px;
 }
 
 .plusCard{
   border: 1px solid rgba(98, 86, 162, 0.12);
   border-radius: 1.25rem;
-  -webkit-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
-  -moz-box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
-  box-shadow: 6px 6px 5px 0px rgba(146,149,161,1);
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
+  box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   background-image: url('plus.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: #ffffff;
+  margin-bottom: 3vh;
+  min-height: 200px;
+
 }
