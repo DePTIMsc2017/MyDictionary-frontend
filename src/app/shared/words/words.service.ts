@@ -9,13 +9,14 @@ import { wordsMock } from '../mock/words.mock';
 import { Word } from '../models/word.model';
 
 import endpoints from '../api.endpoints';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class WordsService implements WordsInterface {
 
   private _foundWord: BehaviorSubject<Array<Word>>
 
-  constructor(private http: Http, private mdhttp: MDHTTP) {}
+  constructor(private http: Http, private mdhttp: MDHTTP, private router: Router) {}
 
   search(word: string): Observable<Array<Word>> {
     return this.http.get(`${endpoints.SEARCH}?word=${word}`)
@@ -33,6 +34,7 @@ export class WordsService implements WordsInterface {
   addWordList(words: Array<AddWordModel>): boolean {
     this.mdhttp.post(endpoints.ADDWORD, words)
       .subscribe(data => {
+        this.router.navigate(['admin/addwordsuccess']);
         console.log(data);
       });
 

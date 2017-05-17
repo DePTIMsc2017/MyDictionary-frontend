@@ -8,6 +8,7 @@ import {AddWordComponent} from './add-word/add-word.component';
 import {AddWordPartComponent} from "./add-word/add-word-part/add-word-part";
 import {UserManagementComponent} from "./user-management/user-management.component";
 import {WordSuggestionComponent} from "./word-suggestion/word-suggestion.component";
+import {AddWordSuccess} from "./add-word/add-word-success/add-word-success";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {WordSuggestionComponent} from "./word-suggestion/word-suggestion.compone
     AddWordComponent,
     AddWordPartComponent,
     UserManagementComponent,
-    WordSuggestionComponent
+    WordSuggestionComponent,
+    AddWordSuccess
   ],
   providers: [],
 })

@@ -35,5 +35,7 @@ export class AddWordComponent  {
       .filter(item => !item.isEmpty())
       .map(item => item.toModelWord()).toArray()
       .subscribe((array: Array<AddWordModel>) => this.wordService.addWordList(array));
+
+
   }
 }

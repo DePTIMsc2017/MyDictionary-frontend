@@ -3,6 +3,7 @@ import { AuthGuardService } from '../shared/guards/auth-guard.service';
 import {AddWordComponent} from "./add-word/add-word.component";
 import {UserManagementComponent} from "./user-management/user-management.component";
 import {WordSuggestionComponent} from "./word-suggestion/word-suggestion.component";
+import {AddWordSuccess} from "./add-word/add-word-success/add-word-success";
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'admin/suggestedwords',
     component: WordSuggestionComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'admin/addwordsuccess',
+    component: AddWordSuccess,
     canActivate: [AuthGuardService]
   }
 
