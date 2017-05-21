@@ -9,6 +9,10 @@
   margin: 0 5px 0 0;
 }
 
+.btn-primary{
+  min-width: 110px;
+}
+
 .datadiv{
 
   padding-top: 30px;
@@ -23,3 +27,45 @@
 
   padding-top: 30px;
 }
+
+h1{
+  color: #656464;
+}
+
+/* ********* MEDIA QUERIES [IN RANGE] ********* */
+/* ******************************************** */
+
+/* Large Devices, Desktops and Up [lg] */
+@media only screen and (min-width : 1200px) {}
+
+/* Medium Devices, Tablets / Desktops [md] */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+}
+
+/* Small Devices, Tablets [sm] */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+
+}
+
+/* Half Small Devices, Mobiles [hs] (CUSTOM M.QUERY)  */
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+  .btn-primary{
+    margin-bottom: 6px;
+  }
+}
+
+/* Extra Small Devices, Mobiles [xs] */
+@media only screen and (max-width : 479px) {
+
+  .btn-primary{
+    margin-bottom: 6px;
+  }
+
+  .maindiv{
+    padding-left: 0;
+  }
+}
+
+

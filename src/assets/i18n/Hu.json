@@ -93,5 +93,24 @@
     "exercise_lesson_long":"Folytatsd itt, ha a már megtanult szavakat szeretnéd gyakorolni",
     "addword_long":"Folytatsd itt, ha a megtanulandó szavakat szeretnéd kategorizálni",
     "about_long":"Folytatsd itt, ha a MyDictionary által kínált lehetőségekkel szeretnél ismerkedni"
-}
+  },
+  "mywords": {
+    "newglossary": "Új szógyűjtemény",
+    "newglossarysub": "Tetszőleges témával",
+    "newglossarydesc": "Akár több száz szóval",
+    "wordcnt": "Szavak száma:"
+  },
+  "hangman": {
+    "exe": "Gyakorlás",
+    "coll": "Válasszon szócsoportot!",
+    "new": "Újat kérek",
+    "rep": "Ismétlés"
+  },
+  "usrmgm": {
+    "usr": "Felhasználónév",
+    "mail": "E-mail cím",
+    "stat": "Státusz",
+    "mod": "Módsítás",
+    "del": "Törlés"
+  }
 }

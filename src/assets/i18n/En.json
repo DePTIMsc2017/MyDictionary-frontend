@@ -93,5 +93,24 @@
     "exercise_lesson_long":"Continue here if you want to practice the words you've learned",
     "addword_long":"Continue here to categorize the words you want to learn",
     "about_long":"Continue here to get acquainted with the opportunities offered by MyDictionary"
+  },
+  "mywords": {
+    "newglossary": "New collection",
+    "newglossarysub": "With any topic",
+    "newglossarydesc": "With more hundred words",
+    "wordcnt": "Word count:"
+  },
+  "hangman": {
+    "exe": "Excercise",
+    "coll": "Choose a collection!",
+    "new": "New game",
+    "rep": "Repeat"
+  },
+  "usrmgm": {
+    "usr": "Username",
+    "mail": "E-mail",
+    "stat": "Status",
+    "mod": "Modify",
+    "del": "Delete"
   }
 }
