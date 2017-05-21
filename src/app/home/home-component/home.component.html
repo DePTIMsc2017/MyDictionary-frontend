@@ -1,28 +1,28 @@
 <div class="row">
   <div class="col-md-6 col-xl-4 myd-padding-bottom">
     <div class="card text-center first" >
-      <img class="card-img-top" src="http://www.fastweb.com/uploads/article_photo/photo/2161/crop380w_istock_000002193842xsmall-books.jpg" alt="chelsea">
+      <img class="card-img-top" src="./assets/images/practice.jpg" height="250px" alt="chelsea">
       <div class="card-block">
-        <p class="card-text">Folytatsd itt, ha a már megtanult szavakat szeretnéd gyakorolni</p>
-        <a href="#" class="btn btn-primary" id="buttonExcercise">Gyakorlás</a>
+        <p class="card-text">{{'home.exercise_lesson_long'|translate}}</p>
+        <a [routerLink]="'practice'" class="btn btn-primary" id="buttonExcercise"> {{'home.exercise_lesson' | translate}}</a>
       </div>
     </div>
   </div>
   <div class="col-md-6 col-xl-4 myd-padding-bottom">
     <div class="card text-center first">
-      <img class="card-img-top" src="http://cdn-write.demandstudios.com/upload/8000/000/50/2/218052.jpg" alt="non" style="">
+      <img class="card-img-top" src="./assets/images/book.jpg" height="250px" alt="non" style="">
       <div class="card-block">
-        <p class="card-text">Folytatsd itt, ha a megtanulandó szavakat szeretnéd kategorizálni.</p>
-        <a href="#" class="btn btn-primary" id="buttonGiveWords">Szavak felvétele</a>
+        <p class="card-text">{{'home.addword_long'|translate}}</p>
+        <a [routerLink]="'admin/addword'" class="btn btn-primary" id="buttonGiveWords">{{'home.addword' | translate}}</a>
       </div>
     </div>
   </div>
   <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-0 myd-padding-bottom">
     <div class="card text-center first" >
-      <img class="card-img-top" src="http://www.flat-living.co.uk/images/pages/page106.jpg" alt="chelsea">
+      <img class="card-img-top" src="./assets/images/about.jpg" height="250px" alt="chelsea">
       <div class="card-block">
-        <p class="card-text">Folytatsd itt, ha a MyDictionary által kínált lehetőségekkel szeretnél ismerkedni.</p>
-        <a href="#" class="btn btn-primary" id="buttonPossibilities">Lehetőségek</a>
+        <p class="card-text">{{'home.about_long'|translate}}</p>
+        <a [routerLink]="'about'" class="btn btn-primary" id="buttonPossibilities">{{'home.about' | translate}}</a>
       </div>
     </div>
   </div>
