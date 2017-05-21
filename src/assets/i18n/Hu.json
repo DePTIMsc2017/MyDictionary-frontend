@@ -112,5 +112,10 @@
     "stat": "Státusz",
     "mod": "Módsítás",
     "del": "Törlés"
+  },
+  "userprofilesuccess":{
+    "done": "A változtatások mentése sikeresen megtörtént",
+    "undone": "A változtatások mentése sikertelen"
+
   }
 }
