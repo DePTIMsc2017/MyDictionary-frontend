@@ -102,6 +102,22 @@
     "mail": "E-mail",
     "stat": "Status",
     "mod": "Modify",
-    "del": "Delete"
+    "del": "Delete",
+    "block": "Block",
+    "save": "Save Changes"
+  },
+  "about": {
+    "hist": "Our history",
+    "mydict": "About MyDictionary",
+    "dev": "Details of the development",
+    "usefullapp": "For what do we use the application and why is it useful",
+    "devteam": "Members of the development team",
+    "usedtech": "Used technologies"
+  },
+  "popup_coll": {
+    "create": "Create word collection",
+    "name": "Name",
+    "desc": "Description",
+    "conf": "Confirm"
   }
 }
