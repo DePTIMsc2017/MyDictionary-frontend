@@ -84,5 +84,24 @@
     "modify_selected": "Modify selected rows",
     "delete_selected": "Delete selected rows",
     "approval": "Approve"
+  },
+  "mywords": {
+    "newglossary": "New collection",
+    "newglossarysub": "With any topic",
+    "newglossarydesc": "With more hundred words",
+    "wordcnt": "Word count:"
+  },
+  "hangman": {
+    "exe": "Excercise",
+    "coll": "Choose a collection!",
+    "new": "New game",
+    "rep": "Repeat"
+  },
+  "usrmgm": {
+    "usr": "Username",
+    "mail": "E-mail",
+    "stat": "Status",
+    "mod": "Modify",
+    "del": "Delete"
   }
 }

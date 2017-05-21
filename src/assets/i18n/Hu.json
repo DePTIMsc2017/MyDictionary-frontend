@@ -84,5 +84,24 @@
     "modify_selected": "Kijelöltek módosítása",
     "delete_selected": "Kijelöltek törlése",
     "approval": "Jóváhagyás"
+  },
+  "mywords": {
+    "newglossary": "Új szógyűjtemény",
+    "newglossarysub": "Tetszőleges témával",
+    "newglossarydesc": "Akár több száz szóval",
+    "wordcnt": "Szavak száma:"
+  },
+  "hangman": {
+    "exe": "Gyakorlás",
+    "coll": "Válasszon szócsoportot!",
+    "new": "Újat kérek",
+    "rep": "Ismétlés"
+  },
+  "usrmgm": {
+    "usr": "Felhasználónév",
+    "mail": "E-mail cím",
+    "stat": "Státusz",
+    "mod": "Módsítás",
+    "del": "Törlés"
   }
 }

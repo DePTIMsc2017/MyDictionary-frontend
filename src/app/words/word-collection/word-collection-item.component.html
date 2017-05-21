@@ -6,7 +6,7 @@
             {{wordCollection.subject}}
       </p>
       <p class="collection-size">
-        Szavak száma: {{wordCollection.size}}
+        {{ 'mywords.wordcnt' | translate }} {{wordCollection.size}}
       </p>
   </div>
 </div>
@@ -14,12 +14,12 @@
 
 <div *ngIf="pluscard" class="plusCard"  (click)="onClick(-1)">
   <div class="card-block clickable">
-    <h4 class="card-title">Új szógyűjtemény</h4>
+    <h4 class="card-title">{{ 'mywords.newglossary' | translate }}</h4>
       <p class="collection-subject">
-            Tetszőleges témával.
+          {{ 'mywords.newglossarysub' | translate }}
       </p>
       <p class="collection-size">
-          Akár több száz szóval.
+          {{ 'mywords.newglossarydesc' | translate }}
       </p>
   </div>
 </div>
