@@ -21,7 +21,7 @@
 
     <td>
       <label *ngIf="index !== users.indexOf(us)">{{us.password}}</label>
-      <label *ngIf="index==users.indexOf(us)"><input type="checkbox" *ngIf="index==users.indexOf(us)" id="statusmodositas">Letiltás</label>
+      <label *ngIf="index==users.indexOf(us)"><input type="checkbox" *ngIf="index==users.indexOf(us)" id="statusmodositas">{{ 'usrmgm.block' | translate }}</label>
     </td>
     <td class="tdb">
       <button type="button" class="btn1" (click)="ngEdit(us)">
@@ -39,5 +39,5 @@
 
 </table>
 <div class="col-1 offset-md-1 col-xl-3 offset-xl-0" *ngIf="modify==false">
-<button class="btn1" type="submit"  id="buttonSubmit" (click)="ngSave(us)">Módosítások mentése</button>
+<button class="btn1" type="submit"  id="buttonSubmit" (click)="ngSave(us)">{{ 'usrmgm.save' | translate }}</button>
 </div>

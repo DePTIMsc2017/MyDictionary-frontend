@@ -111,11 +111,27 @@
     "mail": "E-mail cím",
     "stat": "Státusz",
     "mod": "Módsítás",
+    "del": "Törlés",
+    "block": "Letiltás",
+    "save": "Módosítások mentése"
+  },
+  "about": {
+    "hist": "Történetünk",
+    "mydict": "A MyDictionary-ről",
+    "dev": "A fejlesztés részletei",
+    "usefullapp": "Mire jó és miért hasznos az applikáció",
+    "devteam": "A fejlesztőcsapat tagjai",
+    "usedtech": "Használt technológiák"
+  },
+  "popup_coll": {
+    "create": "Szógyűjtemély létrehozása",
+    "name": "Név",
+    "desc": "Leírás",
+    "conf": "Megerősítés",
     "del": "Törlés"
   },
   "userprofilesuccess":{
     "done": "A változtatások mentése sikeresen megtörtént",
     "undone": "A változtatások mentése sikertelen"
-
   }
 }
