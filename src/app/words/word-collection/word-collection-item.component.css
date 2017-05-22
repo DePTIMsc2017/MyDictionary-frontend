@@ -62,7 +62,7 @@
   -webkit-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   -moz-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
-  background-image: url('books.png');
+  background-image: url('../../../assets/images/books.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: #ffffff;
@@ -76,7 +76,7 @@
   -webkit-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   -moz-box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
   box-shadow: 2px 2px 5px 0px rgba(146,149,161,1);
-  background-image: url('plus.png');
+  background-image: url('../../../assets/images/plus.png');
   background-repeat: no-repeat;
   background-position: right bottom;
   background-color: #ffffff;
