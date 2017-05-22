@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { usersMock } from  '../../shared/mock/users.mock';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'user-profile',
@@ -26,16 +27,15 @@ export class UserProfileComponent implements OnInit {
   private _passErr: boolean;
   private _errorMessage: string;
 
-  constructor() {
+  constructor(private router: Router) {
     this._passErr = false;
     this._failExpression = 'no_fail';
 
-  let name= sessionStorage.getItem('username');
-  console.log(name);
+  let name= sessionStorage.getItem('currentUser');
   this.currentUser = usersMock.filter(data => {
       return data.username == name;
     });
-
+  console.log(sessionStorage);
   this.copy(this.tmpUser, this.currentUser[0]);
 
   }
@@ -129,10 +129,12 @@ export class UserProfileComponent implements OnInit {
       {
         if( this.checkPswd(values.newPswd, this.currentUser[0].username) == 'OK') {
           this.currentUser[0].password = values.newPswd;
-          alert("Sikeres módosítás!");
+          sessionStorage.setItem("isCorrectprofilemodify",'true');
+          this.router.navigate(['admin/userprofilesuccess']);
         }
         else
-          alert("Nem sikerült a módosítás!");
+          sessionStorage.setItem("isCorrectprofilemodify",'false');
+        this.router.navigate(['admin/userprofilesuccess']);
       }
       else {
         if(values.birthdate != "" && values.email != "" && values.country != "" && values.city !="") {
@@ -140,14 +142,17 @@ export class UserProfileComponent implements OnInit {
           this.currentUser[0].email = values.email;
           this.currentUser[0].country = values.country;
           this.currentUser[0].city = values.city;
-          alert("Sikeres módosítás!");
+          sessionStorage.setItem("isCorrectprofilemodify",'true');
+          this.router.navigate(['admin/userprofilesuccess']);
         }
         else
-          alert("Nem sikerült a módosítás!");
+          sessionStorage.setItem("isCorrectprofilemodify",'false');
+        this.router.navigate(['admin/userprofilesuccess']);
       }
     }
     else{
-      alert("Nem sikerült a módosítás!");
+      sessionStorage.setItem("isCorrectprofilemodify",'false');
+      this.router.navigate(['admin/userprofilesuccess']);
   }
     this.tmpUser = Object.assign({}, this.currentUser[0]); //this.currentUser[0].;
     this.modify = false;

@@ -73,7 +73,8 @@
     "adverb": "határozószó",
     "+1word": "+1 szó",
     "+5words": "+5 szó",
-    "send": "Küldés"
+    "send": "Küldés",
+    "success": "A szó/szavak hozzáadása sikeresen megtörtént."
   },
   "suggestedWords": {
     "welcome": "Ájanlott fordítások kezelése",
@@ -84,6 +85,14 @@
     "modify_selected": "Kijelöltek módosítása",
     "delete_selected": "Kijelöltek törlése",
     "approval": "Jóváhagyás"
+  },
+  "home": {
+    "exercise_lesson": "Gyakorlás",
+    "addword": "Szavak felvétele",
+    "about": "Rólunk",
+    "exercise_lesson_long":"Folytatsd itt, ha a már megtanult szavakat szeretnéd gyakorolni",
+    "addword_long":"Folytatsd itt, ha a megtanulandó szavakat szeretnéd kategorizálni",
+    "about_long":"Folytatsd itt, ha a MyDictionary által kínált lehetőségekkel szeretnél ismerkedni"
   },
   "mywords": {
     "newglossary": "Új szógyűjtemény",
@@ -118,6 +127,11 @@
     "create": "Szógyűjtemély létrehozása",
     "name": "Név",
     "desc": "Leírás",
-    "conf": "Megerősítés"
+    "conf": "Megerősítés",
+    "del": "Törlés"
+  },
+  "userprofilesuccess":{
+    "done": "A változtatások mentése sikeresen megtörtént",
+    "undone": "A változtatások mentése sikertelen"
   }
 }

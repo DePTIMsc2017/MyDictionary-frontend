@@ -1,120 +1,147 @@
-<div class="maindiv">
+<div class="maindiv" style="padding: 20px">
   <div class="row d-flex justify-content-between">
     <h1>{{ 'users.welcome' | translate }}</h1>
-    <div class="btn-group blocks ">
-      <button type="button" class="btn btn-primary loginButtonMargin " (click)="onChangeMod(profileForm)" id="buttonChangeData">
-        {{'users.data_modify' | translate}}
-      </button>
-      <button type="button" class="btn btn-primary loginButtonMargin" (click)="onPasswordChangeMod()" id="buttonChangePassword">
-        {{'users.change_pswd' | translate}}
-      </button>
-    </div>
   </div>
 
-  <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm.form.value)">
-      <div class="datadiv">
-      <div class="form-group row ">
-        <div class="col-5  col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'register.username' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label" >{{currentUser[0].username}}</label>
-          <!-- <input ngModel name="username" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="currentUser[0].username" id="inputUserName"> -->
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'register.birthdate' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].birthdate}}</label>
-          <input ngModel name="birthdate" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.birthdate" id="inputBirthDay">
-        </div>
-      </div>
 
 
-      <div class="form-group row">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'register.email' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].email}}</label>
-          <input ngModel name="email" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.email" id="inputEmail">
-        </div>
-      </div>
 
-      <div class="form-group row">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'register.country' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].country}}</label>
-          <input ngModel name="country" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.country" id="inputCountry">
-        </div>
-      </div>
-
-      <div class="form-group row">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'register.city' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].city}}</label>
-          <input ngModel name="city" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.city" id="inputCity">
-        </div>
-      </div>
+<table class="card" style="padding: 10px; max-width: 1000px">
+  <tr>
+    <td >
+      <div>
+        <img src="./assets/images/man-team.jpg" alt="Avatar" style="width: 40%; margin-bottom: 15px">
+        <h4><b>{{currentUser[0].username}}</b></h4>
+        <br>
 
 
-      <div *ngIf="passwordchange == true" class="form-group row" [class.has-danger]="_passErr">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'users.new_password' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2" >
-          <input type="password" ngModel name="newPswd" class="form-control" id="inputNewPassword" (blur)="confirm(profileForm.form.value.newPswd,profileForm.form.value.newPswdA, profileForm.form.value.username)">
-        </div>
-      </div>
-
-      <div *ngIf="passwordchange == true" class="form-group row" [class.has-danger]="_passErr">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class=" col-form-label">{{ 'users.new_password_again' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <input type="password" ngModel name="newPswdA" class="form-control" (blur)="pswequal(profileForm.form.value.newPswd,profileForm.form.value.newPswdA)" id="inputNewPasswordAgain">
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div *ngIf="modify == true || passwordchange == true" class="form-group row d-flex blocks">
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <label class="col-form-label">{{ 'users.actual_password' | translate }}:</label>
-        </div>
-        <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-          <input type="password" ngModel name="oldPswd" class="form-control" id="inputOldPassword">
-        </div>
-        <div class="col-5 col-sm-4 col-md-3 col-xl-2">
-          <button type="submit" class="btn form-control btn-primary loginButtonMargin" id="buttonSubmit" [disabled]="!validPswd">
-            {{'users.confirm'  | translate}}
+        <div class="btn-group blocks ">
+          <button type="button" class="btn btn-primary loginButtonMargin " (click)="onChangeMod(profileForm)" id="buttonChangeData">
+            {{'users.data_modify' | translate}}
+          </button>
+          <button type="button" class="btn btn-primary loginButtonMargin" (click)="onPasswordChangeMod()" id="buttonChangePassword">
+            {{'users.change_pswd' | translate}}
           </button>
         </div>
       </div>
-    </div>
+    </td>
+
+    <td>
+      <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm.form.value)">
+      <div class="col-12 col-sm-12 col-md-12 col-xl-12">
 
 
-    <div class="form-group row" >
-      <div class="col-5 col-sm-4 col-md-3 col-xl-2" [@onfail]="_failExpression">
-        <div class="alert alert-danger ">
-          {{ _errorMessage | translate }}
+        <div class="form-group row">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'register.birthdate' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+            <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].birthdate}}</label>
+            <input ngModel name="birthdate" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.birthdate" id="inputBirthDay">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'register.email' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+            <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].email}}</label>
+            <input ngModel name="email" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.email" id="inputEmail">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'register.country' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+            <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].country}}</label>
+            <input ngModel name="country" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.country" id="inputCountry">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'register.city' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+            <label class=" col-form-label" *ngIf="modify == false">{{currentUser[0].city}}</label>
+            <input ngModel name="city" *ngIf="modify == true" class="form-control" type="text" [(ngModel)]="tmpUser.city" id="inputCity">
+          </div>
+        </div>
+
+
+        <div *ngIf="passwordchange == true" class="form-group row" [class.has-danger]="_passErr">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'users.new_password' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5" >
+            <input type="password" ngModel name="newPswd" class="form-control" id="inputNewPassword" (blur)="confirm(profileForm.form.value.newPswd,profileForm.form.value.newPswdA, profileForm.form.value.username)">
+          </div>
+        </div>
+
+        <div *ngIf="passwordchange == true" class="form-group row" [class.has-danger]="_passErr">
+          <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+            <label class=" col-form-label">{{ 'users.new_password_again' | translate }}:</label>
+          </div>
+          <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+            <input type="password" ngModel name="newPswdA" class="form-control" (blur)="pswequal(profileForm.form.value.newPswd,profileForm.form.value.newPswdA)" id="inputNewPasswordAgain">
+          </div>
+        </div>
+
+
+        <div>
+          <div  *ngIf="modify == true || passwordchange == true" >
+            <div class="form-group row">
+              <div class="col-7 col-sm-7 col-md-7 col-xl-7">
+                <label class="col-form-label">{{ 'users.actual_password' | translate }}:</label>
+              </div>
+              <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+                <input type="password" ngModel name="oldPswd" class="form-control" id="inputOldPassword">
+              </div>
+            </div>
+            <div class="col-5 col-sm-5 col-md-5 col-xl-5">
+              <button type="submit" class="btn form-control btn-primary loginButtonMargin" id="buttonSubmit" [disabled]="!validPswd">
+                {{'users.confirm'  | translate}}
+              </button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+
+
+
+      <div class="form-group row" >
+        <div class="col-10 col-sm-4 col-md-3 col-xl-2" [@onfail]="_failExpression">
+          <div class="alert alert-danger ">
+            {{ _errorMessage | translate }}
+          </div>
         </div>
       </div>
-    </div>
+
+    </form>
+    </td>
+  </tr>
+</table>
 
 
 
-  </form>
 
 
 
 
 
-</div>
+
+
+
+  </div>
+
+

@@ -1,6 +1,8 @@
 import {Component, OnInit, Input, Output, EventEmitter,} from '@angular/core';
 import { suggestedWordsMock, wordsMock } from '../mock/words.mock';
 import {Word} from "../models/word.model";
+import {EditWordComponent} from "./edit-word.component";
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'wordstable',
@@ -11,10 +13,12 @@ export class WordsTableComponent implements OnInit {
   @Input() selectionColumn: boolean = false;
   @Input() range: boolean =false;
   @Input() name: boolean = false;
-  @Input() meaning: boolean = false;
+  @Input() needMeaning: boolean = false;
   @Input() wordClass: boolean = false;
-  @Input() deleteColumn: boolean = false;
+  @Input() editColumn: boolean = false;
   @Input() approve: boolean = false;
+  @Input() allowDelete: boolean= false;
+  @Input() allowModify: boolean= false;
   @Input() words: Array<Word>;
   @Output() approved = new EventEmitter<any>();
   @Output() Deleted = new EventEmitter<any>();
@@ -22,6 +26,10 @@ export class WordsTableComponent implements OnInit {
   Allmodified: Word[];
   selected: Word[];
   own: Word[];
+
+  constructor(
+    private modal: NgbModal
+  ){}
 
   ngOnInit() {
     this.modified = [] ;
@@ -42,12 +50,13 @@ export class WordsTableComponent implements OnInit {
       this.modified = this.modified.filter(i => i !== word);
   }
 
-  onDelete(word){
-
-    this.words = this.words.filter(item => item !== word);
-    let array =[word];
-    console.log(word);
-    this.Deleted.emit({array});
+  onDelete(word,meaning){
+    console.log(meaning);
+    let w = this.words[this.words.indexOf(word)];
+    w.wordMeaning1.forEach(mean => {
+      if(mean === meaning)
+      w.wordMeaning1.splice(w.wordMeaning1.indexOf(mean),1);
+    }) ;
   }
 
   onSelected(word){
@@ -117,6 +126,16 @@ export class WordsTableComponent implements OnInit {
     this.selected = [];
     this.approved.emit(array);
     */
+  }
+
+  onEditWord(word,meaning){
+    const ref = this.modal.open(EditWordComponent, {size: 'lg'});
+    if(this.allowModify)
+        ref.componentInstance.enableModify = true;
+    else
+      ref.componentInstance.enableModify = false;
+    ref.componentInstance.meaning=meaning;
+    ref.componentInstance.word = word;
   }
 
 }

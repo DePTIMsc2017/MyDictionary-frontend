@@ -73,7 +73,8 @@
     "adverb": "adverb",
     "+1word": "+1 word",
     "+5words": "+5 words",
-    "send": "Send"
+    "send": "Send",
+    "success": "Adding word/words is successful."
   },
   "suggestedWords": {
     "welcome": "Suggested words table",
@@ -84,6 +85,14 @@
     "modify_selected": "Modify selected rows",
     "delete_selected": "Delete selected rows",
     "approval": "Approve"
+  },
+  "home": {
+    "exercise_lesson": "Exercise lesson",
+    "addword": "Add words",
+    "about": "About",
+    "exercise_lesson_long":"Continue here if you want to practice the words you've learned",
+    "addword_long":"Continue here to categorize the words you want to learn",
+    "about_long":"Continue here to get acquainted with the opportunities offered by MyDictionary"
   },
   "mywords": {
     "newglossary": "New collection",
@@ -118,6 +127,11 @@
     "create": "Create word collection",
     "name": "Name",
     "desc": "Description",
-    "conf": "Confirm"
+    "conf": "Confirm",
+    "del": "Delete"
+  },
+  "userprofilesuccess":{
+    "done": "Your changes has been succesfull modified",
+    "undone": "Your changes has not been succesfull modified"
   }
 }

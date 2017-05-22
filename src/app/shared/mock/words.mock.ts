@@ -18,6 +18,15 @@ export let wordsMock: Array<Word> = [
           id: 2,
           name: 'angol'
         }
+      },
+      {
+        id: 3,
+        word: 'castle',
+        wordClass: 'noun',
+        language: {
+          id: 2,
+          name: 'angol'
+        }
       }
     ]
   },

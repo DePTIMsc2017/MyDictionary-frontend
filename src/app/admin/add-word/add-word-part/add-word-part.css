@@ -1,0 +1,17 @@
+.word-box{
+  display: block;
+  overflow: hidden;
+  border-bottom: solid 1px #e8e8f1;
+  margin-bottom: 25px;
+}
+
+.select-b{
+  min-height: 29px;
+  min-width: 103px;
+}
+
+.form-control{
+  line-height: 0.45;
+}
+
+

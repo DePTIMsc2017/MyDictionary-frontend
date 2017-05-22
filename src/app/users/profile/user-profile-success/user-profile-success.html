@@ -1,0 +1,9 @@
+
+<div class="alert alert-success " role="alert" *ngIf="isCorrect">
+  <strong>    {{ 'userprofilesuccess.done' | translate }} </strong>
+</div>
+
+
+<div class="alert alert-danger " role="alert" *ngIf="!isCorrect">
+  <strong>    {{ 'userprofilesuccess.undone' | translate }} </strong>
+</div>

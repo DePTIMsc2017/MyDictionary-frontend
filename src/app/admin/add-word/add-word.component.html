@@ -6,29 +6,36 @@
 
   <form #profileForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="datadiv">
-      <add-word-part *ngFor="let item of items" [index]="item"></add-word-part>
 
-    <div class="form-group row">
-      <div class="col-5 col-sm-4 col-md-3 col-xl-1">
-        <button type="button" class="btn btn-primary loginButtonMargin" (click)="duplikal(1)" id="plusOne">
-          {{ 'addWord.+1word' | translate }}
-        </button>
+      <div class="row word-boxes">
+        <add-word-part *ngFor="let item of items" [index]="item"></add-word-part>
       </div>
-      <div class="col-6 col-sm-4 col-md-3 col-xl-1">
-        <button type="button" class="btn btn-primary loginButtonMargin" (click)="duplikal(5)" id="plusFive">
-          {{ 'addWord.+5words' | translate }}
-        </button>
+
+      <div class="form-group row">
+        <div class="col-12 col-lg-2 col-sm-3 col-md-3 col-xs-12">
+
+          <button type="button" class="btn btn-primary loginButtonMargin" (click)="duplikal(1)" id="plusOne">
+            {{ 'addWord.+1word' | translate }}
+          </button>
+        </div>
+
+        <div class="col-12 col-lg-2 col-sm-3 col-md-3 col-xs-12">
+
+          <button type="button" class="btn btn-primary loginButtonMargin" (click)="duplikal(5)" id="plusFive">
+            {{ 'addWord.+5words' | translate }}
+          </button>
+        </div>
+
+        <div class="col-12 col-lg-2 col-sm-3 col-md-3 col-xs-12">
+
+          <button type="submit" class="btn btn-primary loginButtonMargin" id="buttonSubmitAddWord">
+            {{ 'addWord.send' | translate }}
+          </button>
+        </div>
       </div>
-      <div class="col-6 col-sm-4 col-md-3 col-xl-1">
-        <button type="submit" class="btn btn-primary loginButtonMargin" id="buttonSubmitAddWord">
-          {{ 'addWord.send' | translate }}
-        </button>
-      </div>
-    </div>
     </div>
 
   </form>
-
 
 
 </div>
