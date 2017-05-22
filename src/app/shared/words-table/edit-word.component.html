@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h5 class="modal-title">Szógyűjtemény létrehozása</h5>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm.value)">
+<div *ngIf="enableModify" class="row">
+  <div class="col col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+    <label >Szó:</label>
+    <input type="text" name="wname" class="form-control margin" required [(ngModel)]="word.word">
+  </div>
+</div>
+
+
+<div *ngIf="enableModify" class="row">
+  <div class="col col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+    <label >Jelentése</label>
+    <input type="text" name="wmeaning" class="form-control margin" required [(ngModel)]="meaning.word">
+  </div>
+</div>
+
+<div class=" row">
+  <div class="col col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+  <label >Lehetőségek</label><br>
+      <input   type="radio" name="gender" ngModel required value="cut">áthelyezés
+      <input   type="radio" name="gender" ngModel value="copy">másolás<br>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col col-md-6 offset-md-3 col-xl-6 offset-xl-3">
+    <label >Gyűjteményeid</label>
+    <select required name="colselect" ngModel class="select-box form-control margin">
+      <option selected disabled hidden > Válassz szócsoportot!</option>
+      <option *ngFor="let collection of collectionsService.collections | async" value={{collection.id}}>{{
+        collection.name }}
+      </option>
+
+    </select>
+  </div>
+</div>
+
+
+
+<div class="modal-footer d-flex justify-content-between">
+  <button class="btn btn-danger" (click)="activeModal.dismiss()">
+    <i class="fa fa-arrow-circle-left fa-lg"></i>
+    {{ 'general.back' | translate }}
+  </button>
+  <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid ">
+    Megerősít
+  </button>
+</div>
+
+</form>

@@ -32,11 +32,10 @@ export class UserProfileComponent implements OnInit {
     this._failExpression = 'no_fail';
 
   let name= sessionStorage.getItem('currentUser');
-  console.log(name);
   this.currentUser = usersMock.filter(data => {
       return data.username == name;
     });
-
+  console.log(sessionStorage);
   this.copy(this.tmpUser, this.currentUser[0]);
 
   }
