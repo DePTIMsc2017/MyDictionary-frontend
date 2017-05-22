@@ -3,7 +3,7 @@
 node {
    def mvnHome
    stage('Checkout') {
-      git 'https://github.com/DePTIMsc2017/MyDictionary-frontend.git/'
+      checkout scm
    }
    stage('Build') {
         sh 'npm install'
