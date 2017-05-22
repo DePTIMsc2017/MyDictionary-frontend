@@ -1,4 +1,7 @@
 export class collectionList{
   colId: number;
-  words: Array<number>;
+  words: [{
+    id: number;
+    meaningIDs:Array<number>;
+  }]
 }

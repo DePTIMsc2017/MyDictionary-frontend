@@ -5,6 +5,7 @@ import { wordsMock} from "../../shared/mock/words.mock";
 import { Word} from "../../shared/models/word.model";
 import { collectionListMock } from "../../shared/mock/collection-list.mock";
 import {Collection} from "../../shared/models/collection.model";
+import {collectionList} from "../../shared/models/collection-list.model";
 
 @Injectable()
 export class CollectionsService {
@@ -45,7 +46,7 @@ export class CollectionsService {
     collectionListMock.forEach(col => {
       if(col.colId === this._colID)
       {
-        col.words = col.words.filter(wordID => wordID !=id);
+       // col.words = col.words.filter(wordID => wordID !=id);
       }
     });
   }
@@ -55,8 +56,28 @@ export class CollectionsService {
   {
     this._colID = item.id;
     let array = [];
-    let col = collectionListMock.filter( col => col.colId === item.id);
-    col[0].words.forEach(id => wordsMock.forEach( word => word.id === id ? array.push(word): id));
+    let col: Array<collectionList>;
+    col = collectionListMock.filter( col => col.colId === item.id);
+    console.log(col[0].words[0]);
+    col[0].words.forEach(w => wordsMock.forEach( word => {
+      if(word.id === w['id']){
+        array.push(word);
+        // let ownWord = Object.assign(new Word(),word);
+        // word.wordMeaning1.forEach(mean => {
+        //   if(mean.id in w['meaningIDs'])
+        //   {
+        //     ownWord.wordMeaning1.push(Object.assign(new Word(),mean));
+        //   }
+        //
+        // });
+        // console.log(ownWord);
+        // console.log(word);
+        // ownWord.wordMeaning1.splice(0,1);
+        // console.log(ownWord);
+        // console.log(word);
+      }
+
+    }));//word.id === id ? array.push(word): id));
 
     this._words = array;
     return this._words;
@@ -66,7 +87,7 @@ export class CollectionsService {
   {
     let array = [];
     let col = collectionListMock.filter( col => col.colId === id);
-    col[0].words.forEach(id => wordsMock.forEach( word => word.id === id ? array.push(word): id));
+    //col[0].words.forEach(id => wordsMock.forEach( word => word.id === id ? array.push(word): id));
 
     this._words = array;
     return this._words;
@@ -77,11 +98,12 @@ export class CollectionsService {
     let ids = [];
     let col = collectionListMock.filter( col => col.colId == id);
     col[0].words.forEach(id => wordsMock.forEach( word => {
-      if(word.id == id)
-      {
-        this._words.push(word);
-        ids.push(id);
-      }
+
+      // if(word.id == id)
+      // {
+      //   this._words.push(word);
+      //   ids.push(id);
+      // }
 
     }));
 
@@ -115,4 +137,21 @@ export class CollectionsService {
 
     this.addCollection(col);
   }
+
+  moveWord(wordId,meaningId,newColId )
+  {
+    let col = collectionListMock.filter( col => col.colId === newColId );
+    console.log(col[0].words);
+    // col[0].words.forEach(w => wordsMock.forEach( word => {
+    //   if(word.id === w.id){
+    //     let ownWord = word;
+    //     ownWord.wordMeaning1.splice(0,1);
+    //     console.log(ownWord);
+    //     console.log(word);
+    //   }
+    //
+    // }));
+
+  }
+
 }

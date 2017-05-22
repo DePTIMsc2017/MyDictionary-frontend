@@ -60,9 +60,14 @@ export class HangmanComponent implements OnInit {
       }
       if(this.Letters.indexOf(letter) == -1)
       {
-          if(++this.Faults >= 10)
+          if(++this.Faults >= 10){
             this.imgURL = this.imUrlBase.concat('lose','.png');
-          else
+            let i;
+            for( i=0; i<this.word.length; i++)
+              this.Letters[i] = this.word.charAt(i);
+            this.word= undefined;
+          }
+            else
             this.imgURL = this.imUrlBase.concat((this.Faults).toString(),'.png');
       }
       else{
