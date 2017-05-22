@@ -112,5 +112,9 @@
     "stat": "Status",
     "mod": "Modify",
     "del": "Delete"
+  },
+  "userprofilesuccess":{
+    "done": "Your changes has been succesfull modified",
+    "undone": "Your changes has not been succesfull modified"
   }
 }
