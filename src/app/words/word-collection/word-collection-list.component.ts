@@ -24,8 +24,9 @@ export class wordCollectionListComponent implements OnInit {
 
   onItemClicked(item) {
     //console.log(item);
-    this.col =  this.collectionsService.getWords(item);
-    console.log(this.col);
+    this.col =  this.collectionsService.getWords(item.id);
+    console.log(typeof(this.col)+  " ABBA ABBA");
+    //console.log(this.col);
   }
 
   onDelete(words){

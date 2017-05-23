@@ -6,14 +6,18 @@ import { Word} from "../../shared/models/word.model";
 import { collectionListMock } from "../../shared/mock/collection-list.mock";
 import {Collection} from "../../shared/models/collection.model";
 import {collectionList} from "../../shared/models/collection-list.model";
+import endpoints from '../../shared/api.endpoints';
+import {MDHTTP} from '../../shared/MDHTTP';
 
 @Injectable()
 export class CollectionsService {
   private _collections: BehaviorSubject<Array<any>>;
   private _words: Array<any>;
   private _colID: number;
+  private _userID: number;
 
-  constructor() {
+
+  constructor(private mdhttp: MDHTTP) {
     this._collections = new BehaviorSubject([]);
     this._words= new Array(Word);
   }
@@ -27,7 +31,28 @@ export class CollectionsService {
   }
 
   getCollections() {
-    this._collections.next(collectionsMock.slice().reverse());
+    let username= sessionStorage.getItem('currentUser');
+    let array = new Array<Collection>();
+    let tmp = new Collection();
+    let dada:any;
+    this.mdhttp.get(`${endpoints.COLLECTIONS}?username=${username}`)
+      .map(data => data.json())
+      .subscribe(data => {
+          console.log(data);
+          data.forEach(col => {
+            this._userID = col['creator'].id;
+              tmp = new Collection();
+            tmp.name = col['name'];
+            tmp.id = col['id'];
+            array.push(tmp);
+            this._collections.next(array.slice().reverse());
+          })
+        },
+        error => {
+        console.log("HIBA");
+        });
+
+    //this._collections.next(array.slice().reverse());
   }
 
   addCollection(item) {
@@ -52,8 +77,26 @@ export class CollectionsService {
   }
 
 
-  getWords(item)
+  getWords(id)
   {
+    let colwords = new Array<Word>();
+    this.mdhttp.get(`${endpoints.WORDLIST}?id=${id}`)
+      .map(data => data.json())
+      .subscribe(data => {
+          console.log(data[0].words);
+
+          data[0].words.forEach(w => {
+            colwords.push(w);
+
+
+          })
+
+        },
+        error => {
+          console.log("HIBA");
+        });
+
+    /*
     this._colID = item.id;
     let array = [];
     let col: Array<collectionList>;
@@ -78,9 +121,9 @@ export class CollectionsService {
       }
 
     }));//word.id === id ? array.push(word): id));
-
-    this._words = array;
-    return this._words;
+    */
+    //this._words = array;
+    return colwords;
   }
 
   getWordsbyId(id)
@@ -127,15 +170,20 @@ export class CollectionsService {
     return LastID;
   }
 
-  createCollection(name:string, description:string)
+  createCollection(name:string)
   {
-    let col = new Collection();
-    col.id = this.getLastColId()+1;
-    col.name= name;
-    col.subject = description;
-    col.size=0;
+    let userId= sessionStorage.getItem('id-token');
+    let obj = {'id': this._userID, 'name': name};
+    this.mdhttp.post(endpoints.CREATEGROUP, obj)
+      .subscribe(data => {
 
-    this.addCollection(col);
+        console.log(data);
+      });
+    setTimeout(function(){
+      //do what you need here
+    }, 2000);
+    this.getCollections();
+
   }
 
   moveWord(wordId,meaningId,newColId )
