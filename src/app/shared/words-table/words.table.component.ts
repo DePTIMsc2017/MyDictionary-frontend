@@ -36,6 +36,7 @@ export class WordsTableComponent implements OnInit {
     this.selected = [] ;
     this.Allmodified = [];
     this.own = this.words.slice();
+    console.log(this.words);
     console.log(this.words.toString()+ "ABBA");
   }
 

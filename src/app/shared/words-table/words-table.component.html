@@ -11,18 +11,18 @@
   </thead>
 
 <ng-container  *ngFor="let w of words">
-  <tr   *ngFor="let meaning of w.wordMeaning1; let i = index" [ngClass]="{'table-active' : selected.indexOf(meaning) > -1}">
+  <tr   *ngFor="let meaning of w['wordMeaning']; let i = index" [ngClass]="{'table-active' : selected.indexOf(meaning) > -1}">
     <td *ngIf="selectionColumn"><input type="checkbox" name="vehicle" (click)="onSelected(meaning)" [checked]="selected.indexOf(meaning) > -1"></td>
     <!--<td *ngIf="range">{{i}}</td>-->
-    <td *ngIf="name">{{w.word}}</td>
+    <td *ngIf="name">{{w['word']}}</td>
 
     <td *ngIf="needMeaning">
-      <label  *ngIf="modified.indexOf(meaning) == -1">{{meaning.word}}</label>
-      <input class="inputWidth" ngModel name="vmi" *ngIf="modified.indexOf(meaning) > -1" type="text"  [(ngModel)]="meaning.word" id="inputModifiedMeaning">
+      <label  *ngIf="modified.indexOf(meaning) == -1">{{meaning['word']}}</label>
+      <input class="inputWidth" ngModel name="vmi" *ngIf="modified.indexOf(meaning) > -1" type="text"  [(ngModel)]="meaning['word']" id="inputModifiedMeaning">
     </td>
     <td *ngIf="wordClass">
-      <label  *ngIf="modified.indexOf(meaning) == -1">{{w.wordClass}}</label>
-      <input  class="inputWidth2" ngModel name="birthdate" *ngIf="modified.indexOf(meaning) > -1" type="text"  [(ngModel)]="w.wordClass"  id="inputModifiedWordClass">
+      <label  *ngIf="modified.indexOf(meaning) == -1">{{w['wordClass']}}</label>
+      <input  class="inputWidth2" ngModel name="birthdate" *ngIf="modified.indexOf(meaning) > -1" type="text"  [(ngModel)]="w['wordClass']"  id="inputModifiedWordClass">
     </td>
 
     <td *ngIf="editColumn" class="tdb">

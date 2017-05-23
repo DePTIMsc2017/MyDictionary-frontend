@@ -14,7 +14,7 @@ export class CreateWordCollectionComponent {
   }
 
   onSubmit(){
-    this.collectionService.createCollection(this.name, this.description);
+    this.collectionService.createCollection(this.name);
     this.activeModal.dismiss();
   }
 

@@ -21,9 +21,9 @@ export class LoginService implements LoginInterface {
   login(user: LoginModel): void {
     let headers = new Headers();
     headers.set('Content-type', 'application/json');
-
     this.http.post(endpoints.AUTHENTICATE, user, headers)
       .subscribe(data => {
+        console.log(data);
         sessionStorage.setItem('id-token', data.headers.get('X-AUTH-TOKEN'));
         sessionStorage.setItem('currentUser', user.username);
         this._loggedIn.next(true);

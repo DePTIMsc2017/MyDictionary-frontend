@@ -26,7 +26,7 @@ export class WordsComponent implements OnInit {
 
     this.activatedRoute.queryParams.subscribe(
       param => {
-        this._searchedWord = param['word'];
+        this._searchedWord =   param['word'].toLowerCase();
         this.wordService.search(param['word'])
           .subscribe(data => {
             this._foundWords = data;

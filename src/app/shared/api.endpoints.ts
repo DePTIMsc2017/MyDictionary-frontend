@@ -5,5 +5,14 @@ export default {
 
   // WORDS
   SEARCH: BASE_PATH + '/words/search',
-  ADDWORD: BASE_PATH + '/addword'
+  ADDWORD: BASE_PATH + '/addword',
+  //USER
+  USER: BASE_PATH + "/user",
+  MODIFY_USER: BASE_PATH + "/modifyuser",
+  CHANGEPASSWORD: BASE_PATH + "/changePassword",
+  //COLLECTIONS
+  COLLECTIONS: BASE_PATH + "/wordgroupbyuser",
+  WORDLIST: BASE_PATH + "/wordlistbycollection",
+  CREATEGROUP: BASE_PATH + "/creategroup"
+
 }
